@@ -1,0 +1,24 @@
+[submodule "SAM"]
+	path = SAM
+	url = https://github.com/HoareLea/SAM.git
+[submodule "SAM_Revit"]
+	path = SAM_Revit
+	url = https://github.com/HoareLea/SAM_Revit.git
+[submodule "SAM_Solver"]
+	path = SAM_Solver
+	url = https://github.com/HoareLea/SAM_Solver.git
+[submodule "SAM_Topologic"]
+	path = SAM_Topologic
+	url = https://github.com/HoareLea/SAM_Topologic.git
+[submodule "SAM_LadybugTools"]
+	path = SAM_LadybugTools
+	url = https://github.com/HoareLea/SAM_LadybugTools.git
+[submodule "SAM_gbXML"]
+	path = SAM_gbXML
+	url = https://github.com/HoareLea/SAM_gbXML.git
+[submodule "SAM_Tas"]
+	path = SAM_Tas
+	url = https://github.com/HoareLea/SAM_Tas.git
+[submodule "SAM_GEM"]
+	path = SAM_GEM
+	url = https://github.com/HoareLea/SAM_GEM.git
