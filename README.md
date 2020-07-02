@@ -1,8 +1,10 @@
 # SAM_Deploy
 
-This is the managed release repostiry for SAM.
+This is the managed release repository for SAM.
 
 [![Build Status](https://hldigitalinnovation.visualstudio.com/HLApps/_apis/build/status/SAM-deploy-All%20in%20One?branchName=master)](https://hldigitalinnovation.visualstudio.com/HLApps/_build/latest?definitionId=21&branchName=master)
+
+[![Release Status](https://hldigitalinnovation.vsrm.visualstudio.com/_apis/public/Release/badge/a6367bee-24cb-4be6-a95d-64f2645fdd2d/12/18)](https://hldigitalinnovation.vsrm.visualstudio.com/_apis/public/Release/badge/a6367bee-24cb-4be6-a95d-64f2645fdd2d/12/18)
 
 Each repository is included as a submodule which means they only point to a set commit with detached head, see 
 
@@ -10,7 +12,7 @@ https://git-scm.com/book/en/v2/Git-Tools-Submodules
 
 https://blog.tech-fellow.net/2019/05/09/effectively-work-with-git-submodules/
 
-To clone with all submodules inncluded do:
+To clone with all submodules included do:
 
 git clone --recurse-submodules https://github.com/HoareLea/SAM_Deploy.git
 
@@ -21,8 +23,8 @@ git submodule update --init --recursive
 
 TODO:
 - [x] Get build server to build it
-- [ ] Create installer
+- [x] Create installer
 - [ ] Support synamtic versioning
-- [ ] Include releases of installer.zip and sourcecode.zip
+- [x] Include releases of installer.zip and sourcecode.zip
 - [ ] Tidy up this readme
 - [ ] Make repo public
