@@ -22,3 +22,6 @@
 [submodule "SAM_GEM"]
 	path = SAM_GEM
 	url = https://github.com/HoareLea/SAM_GEM.git
+[submodule "SAM_BHoM"]
+	path = SAM_BHoM
+	url = https://github.com/HoareLea/SAM_BHoM.git
