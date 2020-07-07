@@ -1,10 +1,21 @@
-# SAM_Deploy
+<h1>SAM_Deploy</h1>
 
 This is the managed release repository for SAM.
 
 [![Build Status](https://hldigitalinnovation.visualstudio.com/HLApps/_apis/build/status/SAM-deploy-All%20in%20One?branchName=master)](https://hldigitalinnovation.visualstudio.com/HLApps/_build/latest?definitionId=21&branchName=master)
 
 [![Release Status](https://hldigitalinnovation.vsrm.visualstudio.com/_apis/public/Release/badge/a6367bee-24cb-4be6-a95d-64f2645fdd2d/12/18)](https://hldigitalinnovation.vsrm.visualstudio.com/_apis/public/Release/badge/a6367bee-24cb-4be6-a95d-64f2645fdd2d/12/18)
+
+<h2>Installing</h2>
+
+Dowload latest release here:
+
+https://github.com/HoareLea/SAM_Deploy/releases/download/latest/SAM.zip
+
+Unpack and run the install script.
+
+
+<h2>Debugging or building it yourself</h2>
 
 Each repository is included as a submodule which means they only point to a set commit with detached head, see 
 
