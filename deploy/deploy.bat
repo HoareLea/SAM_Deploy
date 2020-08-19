@@ -27,6 +27,6 @@ if not %SAM_VER_NEW%==%SAM_VER_CUR% (
  rmdir SAM /S /Q
  echo Success! SAM version %SAM_VER_NEW% now installed
 ) else (
- echo Luck you, installed version %SAM_VER_CUR%is up to date!
+ echo Lucky you, installed version %SAM_VER_CUR%is up to date!
 )
 
