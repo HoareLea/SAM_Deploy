@@ -18,7 +18,12 @@ if not exist %SAM_VER_FLAG% (
 if not %SAM_VER_NEW%==%SAM_VER_CUR% (
  echo Yay! Installing new SAM version %SAM_VER_NEW%
  echo Downloading...
- wget\wget.exe -N https://github.com/HoareLea/SAM_Deploy/releases/latest/download/SAM.zip -O "%SAM_TEMP_DIR%\SAM.zip"
+
+ if exist "%SAM_TEMP_DIR%\SAM.zip" (
+   del "%SAM_TEMP_DIR%\SAM.zip"
+ )
+
+ wget\wget.exe https://github.com/HoareLea/SAM_Deploy/releases/latest/download/SAM.zip -O "%SAM_TEMP_DIR%\SAM.zip"
  echo Extracting...
  7zip\7za.exe x %SAM_TEMP_DIR%\SAM.zip -bb0 -aoa -o"%SAM_TEMP_DIR%\SAM"
  pushd "%SAM_TEMP_DIR%\SAM"
@@ -28,8 +33,9 @@ if not %SAM_VER_NEW%==%SAM_VER_CUR% (
  echo %SAM_VER_NEW% > %SAM_VER_FLAG%
  rmdir "%SAM_TEMP_DIR%\SAM" /S /Q
  echo Success! SAM version %SAM_VER_NEW% now installed
+ timeout 60
 ) else (
  echo Lucky you, installed version %SAM_VER_CUR%is up to date!
+ timeout 60
 )
 
-timeout 60
