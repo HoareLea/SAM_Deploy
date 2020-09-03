@@ -2,11 +2,22 @@
 @echo off
 set SAM_VER_FLAG=%appdata%\SAM\version
 set SAM_TEMP_DIR=%temp%
+set procName=Rhino.exe
+set CURL=curl
 echo Checking for latest SAM release...
 
+set noCurl=0
+WHERE %CURL%
+IF %ERRORLEVEL% NEQ 0 (
+  echo No CURL!
+  set CURL=%~dp0curl\curl.exe
+  set noCurl=1
+)
 
-curl\curl -s https://api.github.com/repos/HoareLea/SAM_Deploy/releases/latest | grep\grep -o -P "(?<="""tag_name""":\s""").*(?=""")" > "%SAM_TEMP_DIR%\samversion"
+
+%CURL% -s https://api.github.com/repos/HoareLea/SAM_Deploy/releases/latest | %~dp0grep\grep -o -P "(?<="""tag_name""":\s""").*(?=""")" > "%SAM_TEMP_DIR%\samversion"
 set /p SAM_VER_NEW=<"%SAM_TEMP_DIR%\samversion"
+echo:
 echo Latest SAM version is %SAM_VER_NEW%
 
 if not exist %SAM_VER_FLAG% (
@@ -16,26 +27,59 @@ if not exist %SAM_VER_FLAG% (
 )
 
 if not %SAM_VER_NEW%==%SAM_VER_CUR% (
- echo Yay! Installing new SAM version %SAM_VER_NEW%
+
+for /f "usebackq" %%A in (`tasklist /nh /fi "imagename eq %procName%"`) do (
+    if %%A==%procName% (
+      echo:
+      echo Oh shoot! There's new version but you have %procName% open
+      echo Please close %procName% and try again
+      timeout 30
+      goto :EOF
+    )
+)
+
+
+ echo Installing new SAM version %SAM_VER_NEW%
  echo Downloading...
+
 
  if exist "%SAM_TEMP_DIR%\SAM.zip" (
    del "%SAM_TEMP_DIR%\SAM.zip"
+   echo Existing sam.zip deleted
  )
 
- wget\wget.exe https://github.com/HoareLea/SAM_Deploy/releases/latest/download/SAM.zip -O "%SAM_TEMP_DIR%\SAM.zip"
+if %noCurl%==0 (
+ %CURL% --location --output "%SAM_TEMP_DIR%\SAM.zip" --url https://github.com/HoareLea/SAM_Deploy/releases/latest/download/SAM.zip
+) else (
+   %~dp0wget\wget.exe https://github.com/HoareLea/SAM_Deploy/releases/latest/download/SAM.zip -O "%SAM_TEMP_DIR%\SAM.zip"
+)
+
  echo Extracting...
- 7zip\7za.exe x %SAM_TEMP_DIR%\SAM.zip -bb0 -aoa -o"%SAM_TEMP_DIR%\SAM"
- pushd "%SAM_TEMP_DIR%\SAM"
+ %~dp07zip\7za.exe x %SAM_TEMP_DIR%\SAM.zip -bb0 -aoa -o"%SAM_TEMP_DIR%\SAM"
+
  echo Installing...
- install.bat > "%SAM_TEMP_DIR%\SAMcopy.log"
+  
+for /f "usebackq" %%A in (`tasklist /nh /fi "imagename eq %procName%"`) do (
+    if %%A==%procName% (
+      echo:
+      echo Oh shoot! There's new version but you have %procName% open
+      echo Please close %procName% and try again
+      timeout 30
+      goto :EOF
+    )
+)
+
+ pushd "%SAM_TEMP_DIR%\SAM"
+ install.bat
  popd
+
  echo %SAM_VER_NEW% > %SAM_VER_FLAG%
  rmdir "%SAM_TEMP_DIR%\SAM" /S /Q
+ echo:
  echo Success! SAM version %SAM_VER_NEW% now installed
  timeout 60
 ) else (
+ echo:
  echo Lucky you, installed version %SAM_VER_CUR%is up to date!
  timeout 60
 )
-
