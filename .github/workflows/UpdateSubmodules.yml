@@ -1,0 +1,23 @@
+# This is a basic workflow that is manually triggered
+
+name: New Release
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch:
+    # Inputs the workflow accepts.
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "greet"
+  updateSubModules:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+     - name: Checkout submodules
+       uses: srt32/git-actions@v0.0.3
+       with:
+         args: git submodule update --init --recursive
