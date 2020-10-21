@@ -10,9 +10,8 @@ This is the managed release repository for SAM.
 
 Dowload latest release here:
 
-https://github.com/HoareLea/SAM_Deploy/releases/latest/download/SAM.zip
+https://github.com/HoareLea/SAM_Deploy/releases/latest/download/SAM_Install.exe
 
-Unpack and run the install script.
 
 
 <h2>Debugging or building it yourself</h2>
