@@ -14,7 +14,7 @@ AppPublisher=Hoare Lea
 AppPublisherURL=https://github.com/HoareLea/SAM
 AppSupportURL=https://github.com/HoareLea/SAM
 AppUpdatesURL=https://github.com/HoareLea/SAM
-DefaultDirName=%userappdata%\SAM
+DefaultDirName={userappdata}\SAMInstaller
 DisableDirPage=yes
 DefaultGroupName=SAM
 DisableProgramGroupPage=yes
@@ -22,12 +22,21 @@ OutputBaseFilename=SAM_Install
 Compression=lzma
 SolidCompression=yes
 PrivilegesRequired=lowest
+SetupIconFile=SAM20new.ico
 
 [Dirs]
-Name: "{tmp}\SAMtmp"; Flags: deleteafterinstall
+Name: "{userappdata}\SAMInstaller"
+Name: "{userappdata}\SAMInstaller\cache"; Flags: deleteafterinstall
 
 [Files]
-Source: "..\build\*"; DestDir: "{tmp}\SAMtmp"; Flags: ignoreversion createallsubdirs recursesubdirs
+Source: "..\build\*"; DestDir: "{userappdata}\SAMInstaller\cache"; Flags: ignoreversion createallsubdirs recursesubdirs
+Source: "..\build\uninstall.bat"; DestDir: "{userappdata}\SAMInstaller"
 
 [Run]
-Filename: "install.bat"; WorkingDir: "{tmp}\SAMtmp"; Flags: runascurrentuser runhidden
+Filename: "install.bat"; WorkingDir: "{userappdata}\SAMInstaller\cache"; Flags: runascurrentuser runhidden
+
+[UninstallRun]
+Filename: "uninstall.bat"; WorkingDir: "{userappdata}\SAMInstaller"
+
+[UninstallDelete]
+Type: filesandordirs; Name: "{userappdata}\SAMInstaller"
