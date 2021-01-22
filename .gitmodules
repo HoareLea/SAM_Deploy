@@ -25,3 +25,6 @@
 [submodule "SAM_BHoM"]
 	path = SAM_BHoM
 	url = https://github.com/HoareLea/SAM_BHoM.git
+[submodule "SAM_Excel"]
+	path = SAM_Excel
+	url = https://github.com/HoareLea/SAM_Excel.git
