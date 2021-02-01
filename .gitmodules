@@ -1,6 +1,3 @@
-[submodule "SAM"]
-	path = SAM
-	url = https://github.com/HoareLea/SAM.git
 [submodule "SAM_Revit"]
 	path = SAM_Revit
 	url = https://github.com/HoareLea/SAM_Revit.git
@@ -28,3 +25,6 @@
 [submodule "SAM_Excel"]
 	path = SAM_Excel
 	url = https://github.com/HoareLea/SAM_Excel.git
+[submodule "SAM"]
+	path = SAM
+	url = https://github.com/HoareLea/SAM.git
