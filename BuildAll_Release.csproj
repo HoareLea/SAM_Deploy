@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Solution Include="SAM/SAM.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
+	<Solution Include="SAM_Topologic/SAM_Topologic.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>		
+	<Solution Include="SAM_BHom/SAM_BHom.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
+	<Solution Include="SAM_gbXML/SAM_gbXML.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
+	<Solution Include="SAM_GEM/SAM_GEM.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
+	<Solution Include="SAM_LadybugTools/SAM_LadybugTools.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>		
+	<Solution Include="SAM_Solver/SAM_Solver.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>			
+    <Solution Include="SAM_Tas/SAM_Tas.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>			
+    <Solution Include="SAM_Revit/SAM_Revit.sln">
+      <Properties>Configuration=Release2020;Platform=Any CPU;TargetFrameworkVersion=v4.8</Properties>
+    </Solution>
+	<Solution Include="SAM_Revit/SAM_Revit.sln">
+      <Properties>Configuration=Release2021;Platform=Any CPU;TargetFrameworkVersion=v4.8</Properties>
+    </Solution>
+  </ItemGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+  </PropertyGroup>
+  <Target Name="Build">
+    <MSBuild Projects="@(Solution)" BuildInParallel="false" Targets="Build" Properties="Configuration=$(Configuration);OutputPath=%(Projects.BuildOutputPath)"  />
+  </Target>
+  <Target Name="Clean">
+    <MSBuild Projects="@(Solution)" BuildInParallel="false" Targets="Clean" />
+  </Target>
+  <Target Name="Rebuild">
+    <MSBuild Projects="@(Solution)" BuildInParallel="false" Targets="Rebuild" Properties="Configuration=$(Configuration);OutputPath=%(Projects.BuildOutputPath)"/>
+  </Target>
+    <Target Name="Restore">
+    <MSBuild Projects="@(Solution)" BuildInParallel="false" Targets="Restore" Properties="Configuration=$(Configuration);OutputPath=%(Projects.BuildOutputPath)" />
+  </Target>
+</Project>
