@@ -36,6 +36,7 @@ git submodule update --init --recursive
 First enable full commit history for git diff, this only needs to be done once:
 
     git config --global diff.submodule log
+    git config --global status.submoduleSummary true
 
 Then each time you want update:
 
