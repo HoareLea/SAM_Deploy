@@ -31,6 +31,9 @@
 	<Solution Include="SAM_Revit/SAM_Revit.sln">
       <Properties>Configuration=Debug2021;Platform=Any CPU;TargetFrameworkVersion=v4.8</Properties>
     </Solution>
+	<Solution Include="SAM_Excel/SAM_Excel.sln">
+      <Properties>Configuration=Debug;Platform=Any CPU</Properties>
+    </Solution>
   </ItemGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
