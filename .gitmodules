@@ -28,3 +28,6 @@
 [submodule "SAM"]
 	path = SAM
 	url = https://github.com/HoareLea/SAM.git
+[submodule "SAM_IFC"]
+	path = SAM_IFC
+	url = https://github.com/HoareLea/SAM_IFC.git
