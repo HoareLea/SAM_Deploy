@@ -1,7 +1,7 @@
 
 @echo off
 set SAM_VER_FLAG=%appdata%\SAM\version
-set SAM_TEMP_DIR=%temp%
+set SAM_TEMP_DIR=%appdata%\SAMtemp
 set procName=Rhino.exe
 set CURL=curl
 echo Checking for latest SAM release...
@@ -14,6 +14,7 @@ IF %ERRORLEVEL% NEQ 0 (
   set noCurl=1
 )
 
+if not exist %SAM_TEMP_DIR% mkdir %SAM_TEMP_DIR%
 
 %CURL% -s https://api.github.com/repos/HoareLea/SAM_Deploy/releases/latest | %~dp0grep\grep -o -P "(?<="""tag_name""":\s""").*(?=""")" > "%SAM_TEMP_DIR%\samversion"
 set /p SAM_VER_NEW=<"%SAM_TEMP_DIR%\samversion"
@@ -74,7 +75,7 @@ for /f "usebackq" %%A in (`tasklist /nh /fi "imagename eq %procName%"`) do (
  popd
 
  echo %SAM_VER_NEW% > %SAM_VER_FLAG%
- rmdir "%SAM_TEMP_DIR%\SAM" /S /Q
+ rmdir "%SAM_TEMP_DIR%" /S /Q
  echo:
  echo Success! SAM version %SAM_VER_NEW% now installed
  timeout 60

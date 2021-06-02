@@ -34,6 +34,10 @@
 	<Solution Include="SAM_Excel/SAM_Excel.sln">
       <Properties>Configuration=Release;Platform=Any CPU</Properties>
     </Solution>
+    <Solution Include="SAM_IFC/SAM_IFC.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
+
   </ItemGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>

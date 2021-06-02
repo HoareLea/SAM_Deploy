@@ -1,7 +1,11 @@
+@echo off
+
 set GH_PACKAGES_DIR=%APPDATA%\Grasshopper\Libraries\
 set GH_PACKAGES_R2020_DIR=%APPDATA%\Grasshopper\Libraries-Inside-Revit-2020\
 set GH_PACKAGES_R2021_DIR=%APPDATA%\Grasshopper\Libraries-Inside-Revit-2021\
 set SAM_DIR=%APPDATA%\SAM\
+
+if exist "%SAM_DIR%" call "%~dp0uninstall.bat"
 
 if not exist "%GH_PACKAGES_DIR%" mkdir "%GH_PACKAGES_DIR%"
 if not exist "%GH_PACKAGES_R2020_DIR%" mkdir "%GH_PACKAGES_R2020_DIR%"
@@ -34,3 +38,5 @@ move /y "%RV_PACKAGES_R2020_DIR%RhinoInside.Revit.GH.dll" "%RV_PACKAGES_R2020_DI
 move /y "%RV_PACKAGES_R2021_DIR%RhinoInside.Revit.GH.dll" "%RV_PACKAGES_R2021_DIR%RhinoInside.Revit.GH.gha"
 
 "%~dp0SAMdependencies/install.bat"
+
+echo All SAM components installed

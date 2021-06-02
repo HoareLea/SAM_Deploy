@@ -26,7 +26,7 @@ SetupIconFile=SAM20new.ico
 
 [Dirs]
 Name: "{userappdata}\SAMInstaller"
-Name: "{userappdata}\SAMInstaller\cache"; Flags: deleteafterinstall
+Name: "{userappdata}\SAMInstaller\cache"; Flags: deleteafterinstall; AfterInstall: cleanCache
 
 [Files]
 Source: "..\build\*"; DestDir: "{userappdata}\SAMInstaller\cache"; Flags: ignoreversion createallsubdirs recursesubdirs
@@ -40,3 +40,9 @@ Filename: "uninstall.bat"; WorkingDir: "{userappdata}\SAMInstaller"
 
 [UninstallDelete]
 Type: filesandordirs; Name: "{userappdata}\SAMInstaller"
+
+[Code]
+procedure cleanCache();
+begin
+      DelTree(ExpandConstant('{userappdata}\SAMInstaller\cache'), True, True, True);
+end;
