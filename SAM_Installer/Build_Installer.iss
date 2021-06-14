@@ -14,7 +14,7 @@ AppPublisher=Hoare Lea
 AppPublisherURL=https://github.com/HoareLea/SAM
 AppSupportURL=https://github.com/HoareLea/SAM
 AppUpdatesURL=https://github.com/HoareLea/SAM
-DefaultDirName={userappdata}\SAMInstaller
+DefaultDirName={userappdata}\SAM
 DisableDirPage=yes
 DefaultGroupName=SAM
 DisableProgramGroupPage=yes
@@ -25,24 +25,22 @@ PrivilegesRequired=lowest
 SetupIconFile=SAM20new.ico
 
 [Dirs]
-Name: "{userappdata}\SAMInstaller"
-Name: "{userappdata}\SAMInstaller\cache"; Flags: deleteafterinstall; AfterInstall: cleanCache
+Name: "{userappdata}\SAM"
 
 [Files]
-Source: "..\build\*"; DestDir: "{userappdata}\SAMInstaller\cache"; Flags: ignoreversion createallsubdirs recursesubdirs
-Source: "..\build\uninstall.bat"; DestDir: "{userappdata}\SAMInstaller"
+Source: "..\build\SAM\*"; DestDir: "{userappdata}\SAM"; Flags: ignoreversion createallsubdirs recursesubdirs
+Source: "..\build\SAMdependencies\*"; DestDir: "{userappdata}\SAM\SAMdependencies"; Flags: ignoreversion createallsubdirs recursesubdirs
+Source: "..\build\RhinoInside.Revit\*"; DestDir: "{userappdata}\SAM\RhinoInside.Revit"; Flags: ignoreversion createallsubdirs recursesubdirs
+Source: "..\build\register.bat"; DestDir: "{userappdata}\SAM"
+Source: "..\build\deregister.bat"; DestDir: "{userappdata}\SAM"
 
 [Run]
-Filename: "install.bat"; WorkingDir: "{userappdata}\SAMInstaller\cache"; Flags: runascurrentuser runhidden
+Filename: "register.bat"; WorkingDir: "{userappdata}\SAM"; Flags: runascurrentuser runhidden
+Filename: "install.bat"; WorkingDir: "{userappdata}\SAM\SAMdependencies""; Flags: runascurrentuser runhidden
 
 [UninstallRun]
-Filename: "uninstall.bat"; WorkingDir: "{userappdata}\SAMInstaller"
+Filename: "deregister.bat"; WorkingDir: "{userappdata}\SAM"
 
 [UninstallDelete]
-Type: filesandordirs; Name: "{userappdata}\SAMInstaller"
+Type: filesandordirs; Name: "{userappdata}\SAM"
 
-[Code]
-procedure cleanCache();
-begin
-      DelTree(ExpandConstant('{userappdata}\SAMInstaller\cache'), True, True, True);
-end;
