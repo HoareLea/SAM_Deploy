@@ -36,7 +36,7 @@ Source: "..\build\deregister.bat"; DestDir: "{userappdata}\SAM"
 
 [Run]
 Filename: "register.bat"; WorkingDir: "{userappdata}\SAM"; Flags: runascurrentuser runhidden
-Filename: "install.bat"; WorkingDir: "{userappdata}\SAM\SAMdependencies""; Flags: runascurrentuser runhidden
+Filename: "install.bat"; WorkingDir: "{userappdata}\SAM\SAMdependencies"; Flags: runascurrentuser runhidden
 
 [UninstallRun]
 Filename: "deregister.bat"; WorkingDir: "{userappdata}\SAM"
