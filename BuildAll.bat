@@ -16,5 +16,5 @@ for /d %%i in (SAM*) do (
 )
 
 echo Building all SAM Solutions
-"%msbuildexe%" -t:Restore;Rebuild BuildAll.csproj
+"%msbuildexe%" -t:Restore;Rebuild BuildAll_Debug.csproj
 
