@@ -30,7 +30,7 @@ Name: "{userappdata}\SAM"
 [Files]
 Source: "..\build\SAM\*"; DestDir: "{userappdata}\SAM"; Flags: ignoreversion createallsubdirs recursesubdirs
 Source: "..\build\SAMdependencies\*"; DestDir: "{userappdata}\SAM\SAMdependencies"; Flags: ignoreversion createallsubdirs recursesubdirs
-Source: "..\build\RhinoInside.Revit\*"; DestDir: "{userappdata}\SAM\RhinoInside.Revit"; Flags: ignoreversion createallsubdirs recursesubdirs
+Source: "..\build\Rhino.Inside\*"; DestDir: "{userappdata}\SAM\Rhino.Inside"; Flags: ignoreversion createallsubdirs recursesubdirs
 Source: "..\build\register.bat"; DestDir: "{userappdata}\SAM"
 Source: "..\build\deregister.bat"; DestDir: "{userappdata}\SAM"
 
