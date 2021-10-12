@@ -16,7 +16,7 @@ IF %ERRORLEVEL% NEQ 0 (
 
 if not exist %SAM_TEMP_DIR% mkdir %SAM_TEMP_DIR%
 
-%CURL% -s https://api.github.com/repos/HoareLea/SAM_Deploy/releases/latest | %~dp0grep\grep -o -P "(?<="""tag_name""":\s""").*(?=""")" > "%SAM_TEMP_DIR%\samversion"
+%CURL% -s https://api.github.com/repos/HoareLea/SAM_Deploy/releases/latest --insecure | %~dp0grep\grep -o -P "(?<="""tag_name""":\s""").*(?=""")" > "%SAM_TEMP_DIR%\samversion"
 set /p SAM_VER_NEW=<"%SAM_TEMP_DIR%\samversion"
 echo:
 echo Latest SAM version is %SAM_VER_NEW%
@@ -50,7 +50,7 @@ for /f "usebackq" %%A in (`tasklist /nh /fi "imagename eq %procName%"`) do (
  )
 
 if %noCurl%==0 (
- %CURL% --location --output "%SAM_TEMP_DIR%\SAM.zip" --url https://github.com/HoareLea/SAM_Deploy/releases/latest/download/SAM.zip
+ %CURL% --location --output "%SAM_TEMP_DIR%\SAM.zip" --url https://github.com/HoareLea/SAM_Deploy/releases/latest/download/SAM.zip --insecure
 ) else (
    %~dp0wget\wget.exe https://github.com/HoareLea/SAM_Deploy/releases/latest/download/SAM.zip -O "%SAM_TEMP_DIR%\SAM.zip"
 )
