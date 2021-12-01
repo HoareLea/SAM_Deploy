@@ -37,6 +37,12 @@
 	<Solution Include="SAM_Excel/SAM_Excel.sln">
       <Properties>Configuration=Release;Platform=Any CPU</Properties>
     </Solution>
+	<Solution Include="SAM_SQLite/SAM_SQLite.sln">
+      <Properties>Configuration=Release;Platform=x64</Properties>
+    </Solution>
+	<Solution Include="SAM_OpenStudio/SAM_OpenStudio.sln">
+      <Properties>Configuration=Release;Platform=x64</Properties>
+    </Solution>
     <Solution Include="SAM_IFC/SAM_IFC.sln">
       <Properties>Configuration=Release;Platform=x64</Properties>
     </Solution>
