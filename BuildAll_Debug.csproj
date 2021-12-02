@@ -38,7 +38,7 @@
       <Properties>Configuration=Debug;Platform=Any CPU</Properties>
     </Solution>
 	<Solution Include="SAM_SQLite/SAM_SQLite.sln">
-      <Properties>Configuration=Debug;Platform=x64</Properties>
+      <Properties>Configuration=Debug;Platform=Any CPU</Properties>
     </Solution>
 	<Solution Include="SAM_OpenStudio/SAM_OpenStudio.sln">
       <Properties>Configuration=Debug;Platform=Ax64</Properties>
