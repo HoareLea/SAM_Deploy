@@ -31,3 +31,9 @@
 [submodule "SAM_IFC"]
 	path = SAM_IFC
 	url = https://github.com/HoareLea/SAM_IFC.git
+[submodule "SAM_OpenStudio"]
+	path = SAM_OpenStudio
+	url = https://github.com/HoareLea/SAM_OpenStudio.git
+[submodule "SAM_SQLite"]
+	path = SAM_SQLite
+	url = https://github.com/HoareLea/SAM_SQLite.git
