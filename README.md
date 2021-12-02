@@ -16,7 +16,7 @@ Dowload latest release here:
 https://github.com/HoareLea/SAM_Deploy/releases/latest/download/SAM_Install.exe
 
 <h2>*Add New Repository to deploy</h2>   
-    git submodule add https://github.com/HoareLea/SAM_OpenStudio.git
+    `git submodule add https://github.com/HoareLea/SAM_OpenStudio.git`
 
 <h2>Debugging or building it yourself</h2>
 
