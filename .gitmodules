@@ -37,3 +37,6 @@
 [submodule "SAM_SQLite"]
 	path = SAM_SQLite
 	url = https://github.com/HoareLea/SAM_SQLite.git
+[submodule "SAM_Psychrometrics"]
+	path = SAM_Psychrometrics
+	url = https://github.com/HoareLea/SAM_Psychrometrics.git
