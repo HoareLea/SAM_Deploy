@@ -24,7 +24,10 @@
     </Solution>			
     <Solution Include="SAM_Tas/SAM_Tas.sln">
       <Properties>Configuration=Release;Platform=Any CPU</Properties>
-    </Solution>			
+    </Solution>
+    <Solution Include="SAM_SolarCalculator/SAM_SolarCalculator.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>		
     <Solution Include="SAM_Revit/SAM_Revit.sln">
       <Properties>Configuration=Release2020;Platform=Any CPU;TargetFrameworkVersion=v4.8;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2020</Properties>
     </Solution>
