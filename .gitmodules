@@ -40,3 +40,6 @@
 [submodule "SAM_Psychrometrics"]
 	path = SAM_Psychrometrics
 	url = https://github.com/HoareLea/SAM_Psychrometrics.git
+[submodule "SAM_SolarCalculator"]
+	path = SAM_SolarCalculator
+	url = https://github.com/HoareLea/SAM_SolarCalculator.git
