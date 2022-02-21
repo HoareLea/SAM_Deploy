@@ -43,3 +43,6 @@
 [submodule "SAM_SolarCalculator"]
 	path = SAM_SolarCalculator
 	url = https://github.com/HoareLea/SAM_SolarCalculator.git
+[submodule "SAM_Windows"]
+	path = SAM_Windows
+	url = https://github.com/HoareLea/SAM_Windows.git

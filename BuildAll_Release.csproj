@@ -4,6 +4,9 @@
     <Solution Include="SAM/SAM.sln">
       <Properties>Configuration=Release;Platform=Any CPU</Properties>
     </Solution>
+    <Solution Include="SAM_Windows/SAM_Windows.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
 	<Solution Include="SAM_Topologic/SAM_Topologic.sln">
       <Properties>Configuration=Release;Platform=Any CPU</Properties>
     </Solution>		
