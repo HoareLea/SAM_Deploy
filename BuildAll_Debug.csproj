@@ -31,15 +31,6 @@
     <Solution Include="SAM_Tas/SAM_Tas.sln">
       <Properties>Configuration=Debug;Platform=Any CPU</Properties>
     </Solution>	
-    <Solution Include="SAM_Revit/SAM_Revit.sln">
-      <Properties>Configuration=Debug2020;Platform=Any CPU;TargetFrameworkVersion=v4.8;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2020</Properties>
-    </Solution>
-	<Solution Include="SAM_Revit/SAM_Revit.sln">
-      <Properties>Configuration=Debug2021;Platform=Any CPU;TargetFrameworkVersion=v4.8;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2021</Properties>
-    </Solution>
-	<Solution Include="SAM_Revit/SAM_Revit.sln">
-      <Properties>Configuration=Debug2022;Platform=Any CPU;TargetFrameworkVersion=v4.8;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2022</Properties>
-    </Solution>
 	<Solution Include="SAM_Excel/SAM_Excel.sln">
       <Properties>Configuration=Debug;Platform=Any CPU</Properties>
     </Solution>
@@ -51,6 +42,15 @@
     </Solution>
 	<Solution Include="SAM_IFC/SAM_IFC.sln">
       <Properties>Configuration=Debug;Platform=x64</Properties>
+    </Solution>
+    <Solution Include="SAM_Revit/SAM_Revit.sln">
+      <Properties>Configuration=Debug2020;Platform=Any CPU;TargetFrameworkVersion=v4.8;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2020</Properties>
+    </Solution>
+	<Solution Include="SAM_Revit/SAM_Revit.sln">
+      <Properties>Configuration=Debug2021;Platform=Any CPU;TargetFrameworkVersion=v4.8;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2021</Properties>
+    </Solution>
+	<Solution Include="SAM_Revit/SAM_Revit.sln">
+      <Properties>Configuration=Debug2022;Platform=Any CPU;TargetFrameworkVersion=v4.8;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2022</Properties>
     </Solution>
   </ItemGroup>
   <PropertyGroup>
