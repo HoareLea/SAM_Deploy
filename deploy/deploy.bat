@@ -32,7 +32,7 @@ if not %SAM_VER_NEW%==%SAM_VER_CUR% (
 for /f "usebackq" %%A in (`tasklist /nh /fi "imagename eq %procName%"`) do (
     if %%A==%procName% (
       echo:
-      echo Oh shoot! There's new version but you have %procName% open
+      echo There's new version but you have %procName% open
       echo Please close %procName% and try again
       timeout 30
       goto :EOF
@@ -81,6 +81,6 @@ for /f "usebackq" %%A in (`tasklist /nh /fi "imagename eq %procName%"`) do (
  timeout 60
 ) else (
  echo:
- echo Lucky you, installed version %SAM_VER_CUR%is up to date!
+ echo Installed version %SAM_VER_CUR%is up to date!
  timeout 60
 )

@@ -48,6 +48,8 @@ move /y "%RV_PACKAGES_R2022_DIR%RhinoInside.Revit.GH.dll" "%RV_PACKAGES_R2022_DI
 
 "%~dp0SAMdependencies/install.bat"
 
+"%~dp0register.bat"
+
 ENDLOCAL
 
 echo All SAM components installed
