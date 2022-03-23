@@ -46,9 +46,39 @@ move /y "%RV_PACKAGES_R2020_DIR%RhinoInside.Revit.GH.dll" "%RV_PACKAGES_R2020_DI
 move /y "%RV_PACKAGES_R2021_DIR%RhinoInside.Revit.GH.dll" "%RV_PACKAGES_R2021_DIR%RhinoInside.Revit.GH.gha"
 move /y "%RV_PACKAGES_R2022_DIR%RhinoInside.Revit.GH.dll" "%RV_PACKAGES_R2022_DIR%RhinoInside.Revit.GH.gha"
 
-"%~dp0SAMdependencies/install.bat"
+set REVIT_ADDIN_SRC=%APPDATA%\SAM\SAM.addin
+set RV_ADDIN_R2020_LINK=%APPDATA%\Autodesk\Revit\Addins\2020\SAM.addin
+set RV_ADDIN_R2021_LINK=%APPDATA%\Autodesk\Revit\Addins\2021\SAM.addin
+set RV_ADDIN_R2022_LINK=%APPDATA%\Autodesk\Revit\Addins\2022\SAM.addin
 
-"%~dp0register.bat"
+set RV_ADDIN_R2020_DLL=%APPDATA%\SAM\Revit 2020\SAM.Core.Revit.Addin.dll
+set RV_ADDIN_R2021_DLL=%APPDATA%\SAM\Revit 2021\SAM.Core.Revit.Addin.dll
+set RV_ADDIN_R2022_DLL=%APPDATA%\SAM\Revit 2022\SAM.Core.Revit.Addin.dll
+
+setLocal EnableDelayedExpansion
+if exist "%RV_ADDIN_R2020_LINK%" del "%RV_ADDIN_R2020_LINK%"
+For /f "tokens=* delims= " %%a in (%REVIT_ADDIN_SRC%) do (
+Set str=%%a
+set str=!str:^<Assembly^>^</Assembly^>=^<Assembly^>%RV_ADDIN_R2020_DLL%^</Assembly^>!
+echo !str!>>"%RV_ADDIN_R2020_LINK%"
+)
+
+if exist "%RV_ADDIN_R2021_LINK%" del "%RV_ADDIN_R2021_LINK%"
+For /f "tokens=* delims= " %%a in (%REVIT_ADDIN_SRC%) do (
+Set str=%%a
+set str=!str:^<Assembly^>^</Assembly^>=^<Assembly^>%RV_ADDIN_R2021_DLL%^</Assembly^>!
+echo !str!>>"%RV_ADDIN_R2021_LINK%"
+)
+
+if exist "%RV_ADDIN_R2022_LINK%" del "%RV_ADDIN_R2022_LINK%"
+For /f "tokens=* delims= " %%a in (%REVIT_ADDIN_SRC%) do (
+Set str=%%a
+set str=!str:^<Assembly^>^</Assembly^>=^<Assembly^>%RV_ADDIN_R2022_DLL%^</Assembly^>!
+echo !str!>>"%RV_ADDIN_R2022_LINK%"
+)
+
+
+"%~dp0SAMdependencies/install.bat"
 
 ENDLOCAL
 
