@@ -46,3 +46,9 @@
 [submodule "SAM_Windows"]
 	path = SAM_Windows
 	url = https://github.com/HoareLea/SAM_Windows.git
+[submodule "SAM_Rhino_UI"]
+	path = SAM_Rhino_UI
+	url = https://github.com/HoareLea/SAM_Rhino_UI.git
+[submodule "SAM_Revit_UI"]
+	path = SAM_Revit_UI
+	url = https://github.com/HoareLea/SAM_Revit_UI.git
