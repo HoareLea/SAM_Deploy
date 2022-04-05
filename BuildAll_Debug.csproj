@@ -7,6 +7,9 @@
     <Solution Include="SAM_Windows/SAM_Windows.sln">
       <Properties>Configuration=Debug;Platform=Any CPU</Properties>
     </Solution>
+	<Solution Include="SAM_IFC/SAM_IFC.sln">
+      <Properties>Configuration=Debug;Platform=x64</Properties>
+    </Solution>
 	<Solution Include="SAM_Topologic/SAM_Topologic.sln">
       <Properties>Configuration=Debug;Platform=Any CPU</Properties>
     </Solution>		
@@ -39,9 +42,6 @@
     </Solution>
 	<Solution Include="SAM_OpenStudio/SAM_OpenStudio.sln">
       <Properties>Configuration=Debug;Platform=Ax64</Properties>
-    </Solution>
-	<Solution Include="SAM_IFC/SAM_IFC.sln">
-      <Properties>Configuration=Debug;Platform=x64</Properties>
     </Solution>
     <Solution Include="SAM_Revit/SAM_Revit.sln">
       <Properties>Configuration=Debug2020;Platform=Any CPU;TargetFrameworkVersion=v4.8;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2020</Properties>

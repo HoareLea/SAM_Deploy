@@ -7,6 +7,9 @@
     <Solution Include="SAM_Windows/SAM_Windows.sln">
       <Properties>Configuration=Release;Platform=Any CPU</Properties>
     </Solution>
+    <Solution Include="SAM_IFC/SAM_IFC.sln">
+      <Properties>Configuration=Release;Platform=x64</Properties>
+    </Solution>
 	<Solution Include="SAM_Topologic/SAM_Topologic.sln">
       <Properties>Configuration=Release;Platform=Any CPU</Properties>
     </Solution>		
@@ -38,9 +41,6 @@
       <Properties>Configuration=Release;Platform=Any CPU</Properties>
     </Solution>
 	<Solution Include="SAM_OpenStudio/SAM_OpenStudio.sln">
-      <Properties>Configuration=Release;Platform=x64</Properties>
-    </Solution>
-    <Solution Include="SAM_IFC/SAM_IFC.sln">
       <Properties>Configuration=Release;Platform=x64</Properties>
     </Solution>
     <Solution Include="SAM_Revit/SAM_Revit.sln">
