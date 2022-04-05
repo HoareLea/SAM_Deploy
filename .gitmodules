@@ -52,3 +52,6 @@
 [submodule "SAM_Revit_UI"]
 	path = SAM_Revit_UI
 	url = https://github.com/HoareLea/SAM_Revit_UI.git
+[submodule "SAM_UI"]
+	path = SAM_UI
+	url = https://github.com/HoareLea/SAM_UI.git

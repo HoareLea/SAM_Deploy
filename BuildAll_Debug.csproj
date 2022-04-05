@@ -52,6 +52,21 @@
 	<Solution Include="SAM_Revit/SAM_Revit.sln">
       <Properties>Configuration=Debug2022;Platform=Any CPU;TargetFrameworkVersion=v4.8;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2022</Properties>
     </Solution>
+	<Solution Include="SAM_UI/SAM_UI.sln">
+      <Properties>Configuration=Debug;Platform=Any CPU</Properties>
+    </Solution>
+	<Solution Include="SAM_Rhino_UI/SAM_Rhino_UI.sln">
+      <Properties>Configuration=Debug;Platform=Any CPU</Properties>
+    </Solution>
+    <Solution Include="SAM_Revit_UI/SAM_Revit_UI.sln">
+      <Properties>Configuration=Debug2020;Platform=Any CPU;TargetFrameworkVersion=v4.8</Properties>
+    </Solution>
+	<Solution Include="SAM_Revit_UI/SAM_Revit_UI.sln">
+      <Properties>Configuration=Debug2021;Platform=Any CPU;TargetFrameworkVersion=v4.8</Properties>
+    </Solution>
+	<Solution Include="SAM_Revit_UI/SAM_Revit_UI.sln">
+      <Properties>Configuration=Debug2022;Platform=Any CPU;TargetFrameworkVersion=v4.8</Properties>
+    </Solution>
   </ItemGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
