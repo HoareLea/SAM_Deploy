@@ -19,4 +19,8 @@ if exist "%RV_ADDIN_R2022_LINK%" del "%RV_ADDIN_R2022_LINK%"
 set SAM_DIR=%APPDATA%\SAM\
 if exist "%SAM_DIR%" rmdir "%SAM_DIR%" /Q /S
 
+set RH_ADDIN_DIR=%APPDATA%\McNeel\Rhinoceros\packages\7.0\SAM
+if exist "%RH_ADDIN_DIR%" rmdir "%RH_ADDIN_DIR%" /Q /S
+
+
 echo All SAM components uninstalled

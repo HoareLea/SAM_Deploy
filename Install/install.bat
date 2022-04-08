@@ -78,6 +78,10 @@ echo !str!>>"%RV_ADDIN_R2022_LINK%"
 )
 
 
+set RH_ADDIN_DIR=%APPDATA%\McNeel\Rhinoceros\packages\7.0\SAM\
+if not exist "%RH_ADDIN_DIR%" mkdir "%RH_ADDIN_DIR%"
+xcopy /ys "%~dp0SAM_Rhino_UI\*" "%RH_ADDIN_DIR%"
+
 "%~dp0SAMdependencies/install.bat"
 
 ENDLOCAL

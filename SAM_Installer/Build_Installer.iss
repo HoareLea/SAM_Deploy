@@ -34,6 +34,8 @@ Source: "..\build\Rhino.Inside\*"; DestDir: "{userappdata}\SAM\Rhino.Inside"; Fl
 Source: "..\build\register.bat"; DestDir: "{userappdata}\SAM"
 Source: "..\build\deregister.bat"; DestDir: "{userappdata}\SAM"
 
+Source: "..\build\SAM_Rhino_UI"; DestDir: "{userappdata}\McNeel\Rhinoceros\packages\7.0\SAM"; Flags: ignoreversion createallsubdirs recursesubdirs
+
 [Run]
 Filename: "register.bat"; WorkingDir: "{userappdata}\SAM"; Flags: runascurrentuser runhidden
 Filename: "install.bat"; WorkingDir: "{userappdata}\SAM\SAMdependencies"; Flags: runascurrentuser runhidden
