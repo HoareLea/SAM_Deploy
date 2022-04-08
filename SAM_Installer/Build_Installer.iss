@@ -8,7 +8,8 @@
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
 AppId={{6770DD83-5694-4607-8703-B3D3AC3CFD3C}
 AppName=SAM
-AppVersion={#samversion}
+AppVersion=1.0.1
+;{#samversion}
 ;AppVerName=SAM v20201020.1
 AppPublisher=Hoare Lea
 AppPublisherURL=https://github.com/HoareLea/SAM
@@ -28,13 +29,13 @@ SetupIconFile=SAM20new.ico
 Name: "{userappdata}\SAM"
 
 [Files]
-Source: "..\build\SAM\*"; DestDir: "{userappdata}\SAM"; Flags: ignoreversion createallsubdirs recursesubdirs
-Source: "..\build\SAMdependencies\*"; DestDir: "{userappdata}\SAM\SAMdependencies"; Flags: ignoreversion createallsubdirs recursesubdirs
-Source: "..\build\Rhino.Inside\*"; DestDir: "{userappdata}\SAM\Rhino.Inside"; Flags: ignoreversion createallsubdirs recursesubdirs
-Source: "..\build\register.bat"; DestDir: "{userappdata}\SAM"
-Source: "..\build\deregister.bat"; DestDir: "{userappdata}\SAM"
+Source: "build\SAM\*"; DestDir: "{userappdata}\SAM"; Flags: ignoreversion createallsubdirs recursesubdirs
+Source: "build\SAMdependencies\*"; DestDir: "{userappdata}\SAM\SAMdependencies"; Flags: ignoreversion createallsubdirs recursesubdirs
+Source: "build\Rhino.Inside\*"; DestDir: "{userappdata}\SAM\Rhino.Inside"; Flags: ignoreversion createallsubdirs recursesubdirs
+Source: "build\register.bat"; DestDir: "{userappdata}\SAM"
+Source: "build\deregister.bat"; DestDir: "{userappdata}\SAM"
 
-Source: "..\build\SAM_Rhino_UI"; DestDir: "{userappdata}\McNeel\Rhinoceros\packages\7.0\SAM"; Flags: ignoreversion createallsubdirs recursesubdirs
+Source: "build\SAM_Rhino_UI\*"; DestDir: "{userappdata}\McNeel\Rhinoceros\packages\7.0\SAM"; Flags: ignoreversion createallsubdirs recursesubdirs
 
 [Run]
 Filename: "register.bat"; WorkingDir: "{userappdata}\SAM"; Flags: runascurrentuser runhidden
