@@ -59,13 +59,13 @@
       <Properties>Configuration=Release;Platform=Any CPU</Properties>
     </Solution>
     <Solution Include="SAM_Revit_UI/SAM_Revit_UI.sln">
-      <Properties>Configuration=Release2020;Platform=Any CPU;TargetFrameworkVersion=v4.8</Properties>
+      <Properties>Configuration=Release2020;Platform=Any CPU;TargetFrameworkVersion=v4.8;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2020</Properties>
     </Solution>
 	<Solution Include="SAM_Revit_UI/SAM_Revit_UI.sln">
-      <Properties>Configuration=Release2021;Platform=Any CPU;TargetFrameworkVersion=v4.8</Properties>
+      <Properties>Configuration=Release2021;Platform=Any CPU;TargetFrameworkVersion=v4.8;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2021</Properties>
     </Solution>
 	<Solution Include="SAM_Revit_UI/SAM_Revit_UI.sln">
-      <Properties>Configuration=Release2022;Platform=Any CPU;TargetFrameworkVersion=v4.8</Properties>
+      <Properties>Configuration=Release2022;Platform=Any CPU;TargetFrameworkVersion=v4.8;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2022</Properties>
     </Solution>
   </ItemGroup>
   <PropertyGroup>
