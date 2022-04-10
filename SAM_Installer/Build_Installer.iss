@@ -8,8 +8,7 @@
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
 AppId={{6770DD83-5694-4607-8703-B3D3AC3CFD3C}
 AppName=SAM
-AppVersion=1.0.1
-;{#samversion}
+AppVersion={#samversion}
 ;AppVerName=SAM v20201020.1
 AppPublisher=Hoare Lea
 AppPublisherURL=https://github.com/HoareLea/SAM
