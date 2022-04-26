@@ -48,9 +48,9 @@ set RV_ADDIN_R2020_LINK=%APPDATA%\Autodesk\Revit\Addins\2020\SAM.addin
 set RV_ADDIN_R2021_LINK=%APPDATA%\Autodesk\Revit\Addins\2021\SAM.addin
 set RV_ADDIN_R2022_LINK=%APPDATA%\Autodesk\Revit\Addins\2022\SAM.addin
 
-set RV_ADDIN_R2020_DLL=%APPDATA%\SAM\Revit 2020\SAM.Core.Revit.Addin.dll
-set RV_ADDIN_R2021_DLL=%APPDATA%\SAM\Revit 2021\SAM.Core.Revit.Addin.dll
-set RV_ADDIN_R2022_DLL=%APPDATA%\SAM\Revit 2022\SAM.Core.Revit.Addin.dll
+set RV_ADDIN_R2020_DLL=%APPDATA%\SAM\Revit 2020\SAM.Core.Revit.UI.dll
+set RV_ADDIN_R2021_DLL=%APPDATA%\SAM\Revit 2021\SAM.Core.Revit.UI.dll
+set RV_ADDIN_R2022_DLL=%APPDATA%\SAM\Revit 2022\SAM.Core.Revit.UI.dll
 
 setLocal EnableDelayedExpansion
 if exist "%RV_ADDIN_R2020_LINK%" del "%RV_ADDIN_R2020_LINK%"
