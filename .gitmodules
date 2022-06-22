@@ -55,3 +55,6 @@
 [submodule "SAM_UI"]
 	path = SAM_UI
 	url = https://github.com/HoareLea/SAM_UI.git
+[submodule "SAM_Mollier"]
+	path = SAM_Mollier
+	url = https://github.com/HoareLea/SAM_Mollier.git

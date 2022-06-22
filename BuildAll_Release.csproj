@@ -7,6 +7,9 @@
     <Solution Include="SAM_Psychrometrics/SAM_Psychrometrics.sln">
       <Properties>Configuration=Release;Platform=Any CPU</Properties>
     </Solution>
+    <Solution Include="SAM_Mollier/SAM_Mollier.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>	
     <Solution Include="SAM_Windows/SAM_Windows.sln">
       <Properties>Configuration=Release;Platform=Any CPU</Properties>
     </Solution>
