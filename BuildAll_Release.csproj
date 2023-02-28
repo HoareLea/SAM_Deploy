@@ -58,6 +58,9 @@
 	<Solution Include="SAM_Revit/SAM_Revit.sln">
       <Properties>Configuration=Release2022;Platform=Any CPU;TargetFrameworkVersion=v4.8;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2022</Properties>
     </Solution>
+	<Solution Include="SAM_Revit/SAM_Revit.sln">
+      <Properties>Configuration=Release2023;Platform=Any CPU;TargetFrameworkVersion=v4.8;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2023</Properties>
+    </Solution>
 	<Solution Include="SAM_UI/SAM_UI.sln">
       <Properties>Configuration=Release;Platform=Any CPU</Properties>
     </Solution>
@@ -72,6 +75,9 @@
     </Solution>
 	<Solution Include="SAM_Revit_UI/SAM_Revit_UI.sln">
       <Properties>Configuration=Release2022;Platform=Any CPU;TargetFrameworkVersion=v4.8;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2022</Properties>
+    </Solution>
+	<Solution Include="SAM_Revit_UI/SAM_Revit_UI.sln">
+      <Properties>Configuration=Release2023;Platform=Any CPU;TargetFrameworkVersion=v4.8;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2023</Properties>
     </Solution>
   </ItemGroup>
   <PropertyGroup>
