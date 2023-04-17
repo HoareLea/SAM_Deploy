@@ -18,7 +18,7 @@ mkdir %~dp0build\SAMdependencies\GHUserObjects\SAM
 xcopy /ys "%appdata%\Grasshopper\UserObjects\SAM" "%~dp0build\SAMdependencies\GHUserObjects\SAM"
 
 REM Copy Revit addin manifest file
-xcopy /y "..\SAM_Revit\files\Addin\SAM.addin" "%~dp0build\SAM"
+xcopy /y "..\SAM_Revit_UI\files\Addin\SAM.addin" "%~dp0build\SAM"
 
 REM Copy SAM_Rino_UI files
 set SAM_RHINO_UI=%APPDATA%\McNeel\Rhinoceros\packages\7.0\SAM
