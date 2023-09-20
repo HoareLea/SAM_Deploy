@@ -35,6 +35,8 @@ Source: "build\register.bat"; DestDir: "{userappdata}\SAM"
 Source: "build\deregister.bat"; DestDir: "{userappdata}\SAM"
 
 Source: "build\SAM_Rhino_UI\*"; DestDir: "{userappdata}\McNeel\Rhinoceros\packages\7.0\SAM"; Flags: ignoreversion createallsubdirs recursesubdirs
+Source: "build\SAM_Rhino_UI\*"; DestDir: "{userappdata}\McNeel\Rhinoceros\packages\8.0\SAM"; Flags: ignoreversion createallsubdirs recursesubdirs
+
 
 [Run]
 Filename: "register.bat"; WorkingDir: "{userappdata}\SAM"; Flags: runascurrentuser runhidden
