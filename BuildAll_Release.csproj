@@ -4,6 +4,9 @@
     <Solution Include="SAM/SAM.sln">
       <Properties>Configuration=Release;Platform=Any CPU</Properties>
     </Solution>
+    <Solution Include="SAM_Systems/SAM_Systems.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
     <Solution Include="SAM_Psychrometrics/SAM_Psychrometrics.sln">
       <Properties>Configuration=Release;Platform=Any CPU</Properties>
     </Solution>
