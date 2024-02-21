@@ -1,0 +1,1 @@
+signtool.exe sign /f "certs\HLCACodeSigning.pfx" /p bim "Output/SAM_Install.exe"
