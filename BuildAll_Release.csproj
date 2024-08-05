@@ -36,7 +36,7 @@
     </Solution>		
 	<Solution Include="SAM_Solver/SAM_Solver.sln">
       <Properties>Configuration=Release;Platform=Any CPU</Properties>
-    </Solution>		
+  </Solution>		
     <Solution Include="SAM_SolarCalculator/SAM_SolarCalculator.sln">
       <Properties>Configuration=Release;Platform=Any CPU</Properties>
     </Solution>		
@@ -51,10 +51,10 @@
     </Solution>
 	<Solution Include="SAM_OpenStudio/SAM_OpenStudio.sln">
       <Properties>Configuration=Release;Platform=x64</Properties>
-    </Solution>
-    <Solution Include="SAM_Revit/SAM_Revit.sln">
+  </Solution>
+  <Solution Include="SAM_Revit/SAM_Revit.sln">
       <Properties>Configuration=Release2020;Platform=Any CPU;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2020</Properties>
-    </Solution>
+  </Solution>
 	<Solution Include="SAM_Revit/SAM_Revit.sln">
       <Properties>Configuration=Release2021;Platform=Any CPU;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2021</Properties>
     </Solution>
@@ -73,7 +73,7 @@
 	<Solution Include="SAM_Rhino_UI/SAM_Rhino_UI.sln">
       <Properties>Configuration=Release;Platform=Any CPU</Properties>
     </Solution>
-    <Solution Include="SAM_Revit_UI/SAM_Revit_UI.sln">
+  <Solution Include="SAM_Revit_UI/SAM_Revit_UI.sln">
       <Properties>Configuration=Release2020;Platform=Any CPU;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2020</Properties>
     </Solution>
 	<Solution Include="SAM_Revit_UI/SAM_Revit_UI.sln">
