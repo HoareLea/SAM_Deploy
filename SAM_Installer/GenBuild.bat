@@ -25,3 +25,7 @@ set SAM_RHINO_UI=%APPDATA%\McNeel\Rhinoceros\packages\7.0\SAM
 mkdir %~dp0build\SAM_Rhino_UI
 xcopy /ys "%SAM_RHINO_UI%\*" "%~dp0build\SAM_Rhino_UI\"
 echo  1.0.0 > "%~dp0build\SAM_Rhino_UI\manifest.txt"
+
+REM Copy user resource files
+xcopy /ys "%USERPROFILE%\Documents\SAM\" "%~dp0build\user\Documents\SAM\"
+
