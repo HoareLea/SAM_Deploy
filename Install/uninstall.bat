@@ -1,7 +1,7 @@
 @echo off
 
 if "%1"=="" (
-    set YEARS=2020 2021 2022 2023 2024
+    set YEARS=2020 2021 2022 2023 2024 2050 2026
 ) else (
     set YEARS=%*
 )
