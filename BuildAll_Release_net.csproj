@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+     <Solution Include="SAM_Revit/SAM_Revit.sln">
+      <Properties>Configuration=Release2025; Platform=Any CPU;TargetFramework=net8.0-windows</Properties>
+    </Solution>
+    <Solution Include="SAM_Revit_UI/SAM_Revit_UI.sln">
+      <Properties>Configuration=Release2025;Platform=Any CPU;TargetFramework=net8.0-windows</Properties>
+    </Solution>
+     <Solution Include="SAM_Revit/SAM_Revit.sln">
+      <Properties>Configuration=Release2026; Platform=Any CPU;TargetFramework=net8.0-windows</Properties>
+    </Solution>
+    <Solution Include="SAM_Revit_UI/SAM_Revit_UI.sln">
+      <Properties>Configuration=Release2026;Platform=Any CPU;TargetFramework=net8.0-windows</Properties>
+    </Solution>
+ <!--  <Solution Include="SAM_UI/Framework/SAM_UI.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>-->
+<!--    <Solution Include="SAM_Rhino_UI/SAM_Rhino_UI.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution> test
+ 	<Solution Include="SAM_Multitasker/SAM_Multitasker.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>-->
+  </ItemGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+  </PropertyGroup>
+  <Target Name="Build">
+    <MSBuild Projects="@(Solution)" BuildInParallel="false" Targets="Build" Properties="Configuration=$(Configuration);OutputPath=%(Projects.BuildOutputPath)"  />
+  </Target>
+  <Target Name="Clean">
+    <MSBuild Projects="@(Solution)" BuildInParallel="false" Targets="Clean" />
+  </Target>
+  <Target Name="Rebuild">
+    <MSBuild Projects="@(Solution)" BuildInParallel="false" Targets="Rebuild" />
+  </Target>
+  <Target Name="Restore">
+    <MSBuild Projects="@(Solution)" BuildInParallel="false" Targets="Restore" Properties="Configuration=$(Configuration);OutputPath=%(Projects.BuildOutputPath)" />
+  </Target>
+</Project>
