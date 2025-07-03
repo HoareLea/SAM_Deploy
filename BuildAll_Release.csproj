@@ -25,7 +25,7 @@
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Tas\SAM_Tas.sln /t:Restore /p:Configuration=Release" />
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Excel\SAM_Excel.sln /t:Restore /p:Configuration=Release" />
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_SQLite\SAM_SQLite.sln /t:Restore /p:Configuration=Release" />
-    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_OpenStudio\SAM_OpenStudio.sln /t:Restore /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_OpenStudio\SAM_OpenStudio.sln /t:Restore /p:Configuration=Release /p:Platform=x64" />
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Origin\SAM_Origin.sln /t:Restore /p:Configuration=Release" />
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit\SAM_Revit.sln /t:Restore /p:Configuration=Release2025" />
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit\SAM_Revit.sln /t:Restore /p:Configuration=Release2026" />
@@ -56,7 +56,7 @@
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Tas\SAM_Tas.sln /t:Clean /p:Configuration=Release" />
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Excel\SAM_Excel.sln /t:Clean /p:Configuration=Release" />
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_SQLite\SAM_SQLite.sln /t:Clean /p:Configuration=Release" />
-    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_OpenStudio\SAM_OpenStudio.sln /t:Clean /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_OpenStudio\SAM_OpenStudio.sln /t:Clean /p:Configuration=Release /p:Platform=x64" />
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Origin\SAM_Origin.sln /t:Clean /p:Configuration=Release" />
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit\SAM_Revit.sln /t:Clean /p:Configuration=Release2025" />
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit\SAM_Revit.sln /t:Clean /p:Configuration=Release2026" />
@@ -87,7 +87,7 @@
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Tas\SAM_Tas.sln /t:Rebuild /p:Configuration=Release" />
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Excel\SAM_Excel.sln /t:Rebuild /p:Configuration=Release" />
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_SQLite\SAM_SQLite.sln /t:Rebuild /p:Configuration=Release" />
-    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_OpenStudio\SAM_OpenStudio.sln /t:Rebuild /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_OpenStudio\SAM_OpenStudio.sln /t:Rebuild /p:Configuration=Release /p:Platform=x64" />
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Origin\SAM_Origin.sln /t:Rebuild /p:Configuration=Release" />
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit\SAM_Revit.sln /t:Rebuild /p:Configuration=Release2025" />
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit\SAM_Revit.sln /t:Rebuild /p:Configuration=Release2026" />
