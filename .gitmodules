@@ -64,3 +64,6 @@
 [submodule "SAM_Multitasker"]
 	path = SAM_Multitasker
 	url = https://github.com/HoareLea/SAM_Multitasker.git
+[submodule "SAM_Acoustic"]
+	path = SAM_Acoustic
+	url = https://github.com/HoareLea/SAM_Acoustic.git

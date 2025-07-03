@@ -1,111 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ItemGroup>
-    <Solution Include="SAM/SAM.sln">
-      <Properties>Configuration=Release;Platform=Any CPU</Properties>
-    </Solution>
-    <Solution Include="SAM_Systems/SAM_Systems.sln">
-      <Properties>Configuration=Release;Platform=Any CPU</Properties>
-    </Solution>
-    <Solution Include="SAM_Psychrometrics/SAM_Psychrometrics.sln">
-      <Properties>Configuration=Release;Platform=Any CPU</Properties>
-    </Solution>
-    <Solution Include="SAM_Mollier/SAM_Mollier.sln">
-      <Properties>Configuration=Release;Platform=Any CPU</Properties>
-    </Solution>	
-    <Solution Include="SAM_Windows/Framework/SAM_Windows.sln">
-      <Properties>Configuration=Release;Platform=Any CPU</Properties>
-    </Solution>
-    <Solution Include="SAM_IFC/SAM_IFC.sln">
-      <Properties>Configuration=Release;Platform=x64</Properties>
-    </Solution>
-	<Solution Include="SAM_Topologic/SAM_Topologic.sln">
-      <Properties>Configuration=Release;Platform=Any CPU</Properties>
-    </Solution>		
-	<Solution Include="SAM_BHom/SAM_BHom.sln">
-      <Properties>Configuration=Release;Platform=Any CPU</Properties>
-    </Solution>
-	<Solution Include="SAM_gbXML/SAM_gbXML.sln">
-      <Properties>Configuration=Release;Platform=Any CPU</Properties>
-    </Solution>
-	<Solution Include="SAM_GEM/SAM_GEM.sln">
-      <Properties>Configuration=Release;Platform=Any CPU</Properties>
-    </Solution>
-	<Solution Include="SAM_LadybugTools/SAM_LadybugTools.sln">
-      <Properties>Configuration=Release;Platform=Any CPU</Properties>
-    </Solution>		
-	<Solution Include="SAM_Solver/SAM_Solver.sln">
-      <Properties>Configuration=Release;Platform=Any CPU</Properties>
-  </Solution>		
-    <Solution Include="SAM_SolarCalculator/SAM_SolarCalculator.sln">
-      <Properties>Configuration=Release;Platform=Any CPU</Properties>
-    </Solution>		
-    <Solution Include="SAM_Tas/SAM_Tas.sln">
-      <Properties>Configuration=Release;Platform=Any CPU</Properties>
-    </Solution>
-	<Solution Include="SAM_Excel/SAM_Excel.sln">
-      <Properties>Configuration=Release;Platform=Any CPU</Properties>
-    </Solution>
-	<Solution Include="SAM_SQLite/SAM_SQLite.sln">
-      <Properties>Configuration=Release;Platform=Any CPU</Properties>
-    </Solution>
-	<Solution Include="SAM_OpenStudio/SAM_OpenStudio.sln">
-      <Properties>Configuration=Release;Platform=x64</Properties>
-  </Solution>
-  <Solution Include="SAM_Revit/SAM_Revit.sln">
-      <Properties>Configuration=Release2020;Platform=Any CPU;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2020</Properties>
-  </Solution>
-	<Solution Include="SAM_Revit/SAM_Revit.sln">
-      <Properties>Configuration=Release2021;Platform=Any CPU;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2021</Properties>
-    </Solution>
-	<Solution Include="SAM_Revit/SAM_Revit.sln">
-      <Properties>Configuration=Release2022;Platform=Any CPU;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2022</Properties>
-    </Solution>
-	<Solution Include="SAM_Revit/SAM_Revit.sln">
-      <Properties>Configuration=Release2023;Platform=Any CPU;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2023</Properties>
-    </Solution>
-	<Solution Include="SAM_Revit/SAM_Revit.sln">
-      <Properties>Configuration=Release2024;Platform=Any CPU;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2024</Properties>
-    </Solution>
-	<Solution Include="SAM_UI/SAM_UI.sln">
-      <Properties>Configuration=Release;Platform=Any CPU</Properties>
-    </Solution>
-	<Solution Include="SAM_Rhino_UI/SAM_Rhino_UI.sln">
-      <Properties>Configuration=Release;Platform=Any CPU</Properties>
-    </Solution>
-  <Solution Include="SAM_Revit_UI/SAM_Revit_UI.sln">
-      <Properties>Configuration=Release2020;Platform=Any CPU;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2020</Properties>
-    </Solution>
-	<Solution Include="SAM_Revit_UI/SAM_Revit_UI.sln">
-      <Properties>Configuration=Release2021;Platform=Any CPU;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2021</Properties>
-    </Solution>
-	<Solution Include="SAM_Revit_UI/SAM_Revit_UI.sln">
-      <Properties>Configuration=Release2022;Platform=Any CPU;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2022</Properties>
-    </Solution>
-	<Solution Include="SAM_Revit_UI/SAM_Revit_UI.sln">
-      <Properties>Configuration=Release2023;Platform=Any CPU;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2023</Properties>
-    </Solution>
-	<Solution Include="SAM_Revit_UI/SAM_Revit_UI.sln">
-      <Properties>Configuration=Release2024;Platform=Any CPU;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2024</Properties>
-    </Solution>
-	<Solution Include="SAM_Multitasker/SAM_Multitasker.sln">
-      <Properties>Configuration=Release;Platform=Any CPU</Properties>
-    </Solution>
-  </ItemGroup>
+<Project ToolsVersion="12.0" DefaultTargets="RestoreCleanRebuild" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <MSBuildExePath>C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin\msbuild</MSBuildExePath>
   </PropertyGroup>
-  <Target Name="Build">
-    <MSBuild Projects="@(Solution)" BuildInParallel="false" Targets="Build" Properties="Configuration=$(Configuration);OutputPath=%(Projects.BuildOutputPath)"  />
+
+  <Target Name="Restore">
+    <Exec Command="echo Restoring all solutions" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM\SAM.sln /t:Restore /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Systems\SAM_Systems.sln /t:Restore /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Psychrometrics\SAM_Psychrometrics.sln /t:Restore /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Mollier\SAM_Mollier.sln /t:Restore /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Windows\SAM_Windows.sln /t:Restore /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_IFC\SAM_IFC.sln /t:Restore /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Topologic\SAM_Topologic.sln /t:Restore /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Acoustic\SAM_Acoustic.sln /t:Restore /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_BHom\SAM_BHom.sln /t:Restore /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_gbXML\SAM_gbXML.sln /t:Restore /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_GEM\SAM_GEM.sln /t:Restore /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_LadybugTools\SAM_LadybugTools.sln /t:Restore /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Solver\SAM_Solver.sln /t:Restore /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_SolarCalculator\SAM_SolarCalculator.sln /t:Restore /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Tas\SAM_Tas.sln /t:Restore /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Excel\SAM_Excel.sln /t:Restore /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_SQLite\SAM_SQLite.sln /t:Restore /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_OpenStudio\SAM_OpenStudio.sln /t:Restore /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Origin\SAM_Origin.sln /t:Restore /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit\SAM_Revit.sln /t:Restore /p:Configuration=Release2025" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit\SAM_Revit.sln /t:Restore /p:Configuration=Release2026" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_UI\SAM_UI.sln /t:Restore /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Rhino_UI\SAM_Rhino_UI.sln /t:Restore /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit_UI\SAM_Revit_UI.sln /t:Restore /p:Configuration=Release2025" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit_UI\SAM_Revit_UI.sln /t:Restore /p:Configuration=Release2026" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Multitasker\SAM_Multitasker.sln /t:Restore /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_UI\SAM_UI.sln /t:Restore /p:Configuration=Release" />
   </Target>
+
   <Target Name="Clean">
-    <MSBuild Projects="@(Solution)" BuildInParallel="false" Targets="Clean" />
+    <Exec Command="echo Cleaning all solutions" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM\SAM.sln /t:Clean /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Systems\SAM_Systems.sln /t:Clean /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Psychrometrics\SAM_Psychrometrics.sln /t:Clean /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Mollier\SAM_Mollier.sln /t:Clean /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Windows\SAM_Windows.sln /t:Clean /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_IFC\SAM_IFC.sln /t:Clean /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Topologic\SAM_Topologic.sln /t:Clean /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Acoustic\SAM_Acoustic.sln /t:Clean /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_BHom\SAM_BHom.sln /t:Clean /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_gbXML\SAM_gbXML.sln /t:Clean /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_GEM\SAM_GEM.sln /t:Clean /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_LadybugTools\SAM_LadybugTools.sln /t:Clean /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Solver\SAM_Solver.sln /t:Clean /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_SolarCalculator\SAM_SolarCalculator.sln /t:Clean /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Tas\SAM_Tas.sln /t:Clean /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Excel\SAM_Excel.sln /t:Clean /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_SQLite\SAM_SQLite.sln /t:Clean /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_OpenStudio\SAM_OpenStudio.sln /t:Clean /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Origin\SAM_Origin.sln /t:Clean /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit\SAM_Revit.sln /t:Clean /p:Configuration=Release2025" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit\SAM_Revit.sln /t:Clean /p:Configuration=Release2026" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_UI\SAM_UI.sln /t:Clean /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Rhino_UI\SAM_Rhino_UI.sln /t:Clean /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit_UI\SAM_Revit_UI.sln /t:Clean /p:Configuration=Release2025" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit_UI\SAM_Revit_UI.sln /t:Clean /p:Configuration=Release2026" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Multitasker\SAM_Multitasker.sln /t:Clean /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_UI\SAM_UI.sln /t:Clean /p:Configuration=Release" />
   </Target>
+
   <Target Name="Rebuild">
-    <MSBuild Projects="@(Solution)" BuildInParallel="false" Targets="Rebuild" Properties="Configuration=$(Configuration);OutputPath=%(Projects.BuildOutputPath)"/>
+    <Exec Command="echo Rebuilding all solutions" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM\SAM.sln /t:Rebuild /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Systems\SAM_Systems.sln /t:Rebuild /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Psychrometrics\SAM_Psychrometrics.sln /t:Rebuild /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Mollier\SAM_Mollier.sln /t:Rebuild /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Windows\SAM_Windows.sln /t:Rebuild /p:Configuration=Release" />
+	<Exec Command="&quot;$(MSBuildExePath)&quot; SAM_IFC\SAM_IFC.sln /t:Rebuild /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Topologic\SAM_Topologic.sln /t:Rebuild /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Acoustic\SAM_Acoustic.sln /t:Rebuild /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_BHom\SAM_BHom.sln /t:Rebuild /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_gbXML\SAM_gbXML.sln /t:Rebuild /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_GEM\SAM_GEM.sln /t:Rebuild /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_LadybugTools\SAM_LadybugTools.sln /t:Rebuild /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Solver\SAM_Solver.sln /t:Rebuild /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_SolarCalculator\SAM_SolarCalculator.sln /t:Rebuild /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Tas\SAM_Tas.sln /t:Rebuild /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Excel\SAM_Excel.sln /t:Rebuild /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_SQLite\SAM_SQLite.sln /t:Rebuild /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_OpenStudio\SAM_OpenStudio.sln /t:Rebuild /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Origin\SAM_Origin.sln /t:Rebuild /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit\SAM_Revit.sln /t:Rebuild /p:Configuration=Release2025" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit\SAM_Revit.sln /t:Rebuild /p:Configuration=Release2026" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_UI\SAM_UI.sln /t:Rebuild /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Rhino_UI\SAM_Rhino_UI.sln /t:Rebuild /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit_UI\SAM_Revit_UI.sln /t:Rebuild /p:Configuration=Release2025" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit_UI\SAM_Revit_UI.sln /t:Rebuild /p:Configuration=Release2026" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Multitasker\SAM_Multitasker.sln /t:Rebuild /p:Configuration=Release" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_UI\SAM_UI.sln /t:Rebuild /p:Configuration=Release" />
   </Target>
-    <Target Name="Restore">
-    <MSBuild Projects="@(Solution)" BuildInParallel="false" Targets="Restore" Properties="Configuration=$(Configuration);OutputPath=%(Projects.BuildOutputPath)" />
-  </Target>
+
+
+  <!-- Unified build entry points -->
+   <Target Name="RestoreCleanRebuild" DependsOnTargets="Restore;Clean;Rebuild" /> 
+  <!--   <Target Name="RestoreCleanRebuild" DependsOnTargets="Restore;Clean;Rebuild" /> -->
+  <!--   <Target Name="RestoreCleanRebuild" DependsOnTargets="Rebuild" /> -->
+  
 </Project>

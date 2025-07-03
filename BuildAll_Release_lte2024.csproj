@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Solution Include="SAM/SAM.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
+    <Solution Include="SAM_Systems/SAM_Systems.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
+    <Solution Include="SAM_Psychrometrics/SAM_Psychrometrics.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
+    <Solution Include="SAM_Mollier/SAM_Mollier.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>	
+    <Solution Include="SAM_Windows/Framework/SAM_Windows.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
+    <Solution Include="SAM_IFC/SAM_IFC.sln">
+      <Properties>Configuration=Release;Platform=x64</Properties>
+    </Solution>
+	<Solution Include="SAM_Topologic/SAM_Topologic.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>		
+	<Solution Include="SAM_BHom/SAM_BHom.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
+	<Solution Include="SAM_gbXML/SAM_gbXML.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
+	<Solution Include="SAM_GEM/SAM_GEM.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
+	<Solution Include="SAM_LadybugTools/SAM_LadybugTools.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>		
+	<Solution Include="SAM_Solver/SAM_Solver.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+  </Solution>		
+    <Solution Include="SAM_SolarCalculator/SAM_SolarCalculator.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>		
+    <Solution Include="SAM_Tas/SAM_Tas.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
+	<Solution Include="SAM_Excel/SAM_Excel.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
+	<Solution Include="SAM_SQLite/SAM_SQLite.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
+	<Solution Include="SAM_OpenStudio/SAM_OpenStudio.sln">
+      <Properties>Configuration=Release;Platform=x64</Properties>
+  </Solution>
+  <Solution Include="SAM_Revit/SAM_Revit.sln">
+      <Properties>Configuration=Release2020;Platform=Any CPU;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2020</Properties>
+  </Solution>
+	<Solution Include="SAM_Revit/SAM_Revit.sln">
+      <Properties>Configuration=Release2021;Platform=Any CPU;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2021</Properties>
+    </Solution>
+	<Solution Include="SAM_Revit/SAM_Revit.sln">
+      <Properties>Configuration=Release2022;Platform=Any CPU;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2022</Properties>
+    </Solution>
+	<Solution Include="SAM_Revit/SAM_Revit.sln">
+      <Properties>Configuration=Release2023;Platform=Any CPU;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2023</Properties>
+    </Solution>
+	<Solution Include="SAM_Revit/SAM_Revit.sln">
+      <Properties>Configuration=Release2024;Platform=Any CPU;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2024</Properties>
+    </Solution>
+	<Solution Include="SAM_UI/SAM_UI.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
+	<Solution Include="SAM_Rhino_UI/SAM_Rhino_UI.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
+  <Solution Include="SAM_Revit_UI/SAM_Revit_UI.sln">
+      <Properties>Configuration=Release2020;Platform=Any CPU;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2020</Properties>
+    </Solution>
+	<Solution Include="SAM_Revit_UI/SAM_Revit_UI.sln">
+      <Properties>Configuration=Release2021;Platform=Any CPU;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2021</Properties>
+    </Solution>
+	<Solution Include="SAM_Revit_UI/SAM_Revit_UI.sln">
+      <Properties>Configuration=Release2022;Platform=Any CPU;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2022</Properties>
+    </Solution>
+	<Solution Include="SAM_Revit_UI/SAM_Revit_UI.sln">
+      <Properties>Configuration=Release2023;Platform=Any CPU;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2023</Properties>
+    </Solution>
+	<Solution Include="SAM_Revit_UI/SAM_Revit_UI.sln">
+      <Properties>Configuration=Release2024;Platform=Any CPU;ReferencePath=$(MSBuildProjectDirectory)\SAM_Revit\references\Revit 2024</Properties>
+    </Solution>
+	<Solution Include="SAM_Multitasker/SAM_Multitasker.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
+  </ItemGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+  </PropertyGroup>
+  <Target Name="Build">
+    <MSBuild Projects="@(Solution)" BuildInParallel="false" Targets="Build" Properties="Configuration=$(Configuration);OutputPath=%(Projects.BuildOutputPath)"  />
+  </Target>
+  <Target Name="Clean">
+    <MSBuild Projects="@(Solution)" BuildInParallel="false" Targets="Clean" />
+  </Target>
+  <Target Name="Rebuild">
+    <MSBuild Projects="@(Solution)" BuildInParallel="false" Targets="Rebuild" Properties="Configuration=$(Configuration);OutputPath=%(Projects.BuildOutputPath)"/>
+  </Target>
+    <Target Name="Restore">
+    <MSBuild Projects="@(Solution)" BuildInParallel="false" Targets="Restore" Properties="Configuration=$(Configuration);OutputPath=%(Projects.BuildOutputPath)" />
+  </Target>
+</Project>
