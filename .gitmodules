@@ -67,3 +67,6 @@
 [submodule "SAM_Acoustic"]
 	path = SAM_Acoustic
 	url = https://github.com/HoareLea/SAM_Acoustic.git
+[submodule "SAM_Origin"]
+	path = SAM_Origin
+	url = https://github.com/HoareLea/SAM_Origin.git
