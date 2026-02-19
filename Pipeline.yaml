@@ -7,6 +7,9 @@ trigger:
     - 2025plus-build
   batch: True
 name: $(date:yyyyMMdd)$(rev:.r)
+pool:
+  name: Azure Pipelines
+  vmImage: windows-latest
 jobs:
 - job: Job_1
   displayName: Agent job 1
@@ -21,11 +24,7 @@ jobs:
   - task: CmdLine@2
     displayName: Clean SAM Build dir
     inputs:
-      script: >-
-        set SAM_DIR=%APPDATA%\SAM\
-
-
-        if exist "%SAM_DIR%" rmdir "%SAM_DIR%" /Q /S
+      script: if exist "%APPDATA%\SAM\" rmdir "%APPDATA%\SAM\" /Q /S
   - task: CmdLine@2
     displayName: Create Grasshopper lib folder
     inputs:
@@ -110,7 +109,7 @@ jobs:
     inputs:
       solution: BuildAll_Release.csproj
       vsVersion: 17.0
-      msbuildArgs: /property:langversion=latest -t:Restore;Rebuild
+      msbuildArgs: /property:langversion=latest /t:RestoreCleanRebuild
       platform: $(BuildPlatform)
       configuration: $(BuildConfiguration)
   - task: CopyFiles@2
