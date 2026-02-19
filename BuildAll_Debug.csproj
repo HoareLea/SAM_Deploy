@@ -26,18 +26,12 @@
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Excel\SAM_Excel.sln /t:Restore /p:Configuration=Debug" />
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_SQLite\SAM_SQLite.sln /t:Restore /p:Configuration=Debug" />
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_OpenStudio\SAM_OpenStudio.sln /t:Restore /p:Configuration=Debug;Platform=x64" />
-    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit\SAM_Revit.sln /t:Restore /p:Configuration=Debug2020;TargetFrameworkVersion=v4.8" />
-    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit\SAM_Revit.sln /t:Restore /p:Configuration=Debug2021;TargetFrameworkVersion=v4.8" />
-    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit\SAM_Revit.sln /t:Restore /p:Configuration=Debug2022;TargetFrameworkVersion=v4.8" />
-    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit\SAM_Revit.sln /t:Restore /p:Configuration=Debug2023;TargetFrameworkVersion=v4.8" />
-    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit\SAM_Revit.sln /t:Restore /p:Configuration=Debug2024;TargetFrameworkVersion=v4.8" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit\SAM_Revit.sln /t:Restore /p:Configuration=Debug2025" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit\SAM_Revit.sln /t:Restore /p:Configuration=Debug2026" />
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_UI\SAM_UI.sln /t:Restore /p:Configuration=Debug" />
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Rhino_UI\SAM_Rhino_UI.sln /t:Restore /p:Configuration=Debug" />
-    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit_UI\SAM_Revit_UI.sln /t:Restore /p:Configuration=Debug2020;TargetFrameworkVersion=v4.8" />
-    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit_UI\SAM_Revit_UI.sln /t:Restore /p:Configuration=Debug2021;TargetFrameworkVersion=v4.8" />
-    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit_UI\SAM_Revit_UI.sln /t:Restore /p:Configuration=Debug2022;TargetFrameworkVersion=v4.8" />
-    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit_UI\SAM_Revit_UI.sln /t:Restore /p:Configuration=Debug2023;TargetFrameworkVersion=v4.8" />
-    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit_UI\SAM_Revit_UI.sln /t:Restore /p:Configuration=Debug2024;TargetFrameworkVersion=v4.8" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit_UI\SAM_Revit_UI.sln /t:Restore /p:Configuration=Debug2025" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit_UI\SAM_Revit_UI.sln /t:Restore /p:Configuration=Debug2026" />
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Multitasker\SAM_Multitasker.sln /t:Restore /p:Configuration=Debug" />
   </Target>
 
@@ -61,18 +55,12 @@
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Excel\SAM_Excel.sln /t:Clean /p:Configuration=Debug" />
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_SQLite\SAM_SQLite.sln /t:Clean /p:Configuration=Debug" />
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_OpenStudio\SAM_OpenStudio.sln /t:Clean /p:Configuration=Debug;Platform=x64" />
-    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit\SAM_Revit.sln /t:Clean /p:Configuration=Debug2020;TargetFrameworkVersion=v4.8" />
-    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit\SAM_Revit.sln /t:Clean /p:Configuration=Debug2021;TargetFrameworkVersion=v4.8" />
-    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit\SAM_Revit.sln /t:Clean /p:Configuration=Debug2022;TargetFrameworkVersion=v4.8" />
-    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit\SAM_Revit.sln /t:Clean /p:Configuration=Debug2023;TargetFrameworkVersion=v4.8" />
-    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit\SAM_Revit.sln /t:Clean /p:Configuration=Debug2024;TargetFrameworkVersion=v4.8" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit\SAM_Revit.sln /t:Clean /p:Configuration=Debug2025" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit\SAM_Revit.sln /t:Clean /p:Configuration=Debug2026" />
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_UI\SAM_UI.sln /t:Clean /p:Configuration=Debug" />
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Rhino_UI\SAM_Rhino_UI.sln /t:Clean /p:Configuration=Debug" />
-    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit_UI\SAM_Revit_UI.sln /t:Clean /p:Configuration=Debug2020;TargetFrameworkVersion=v4.8" />
-    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit_UI\SAM_Revit_UI.sln /t:Clean /p:Configuration=Debug2021;TargetFrameworkVersion=v4.8" />
-    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit_UI\SAM_Revit_UI.sln /t:Clean /p:Configuration=Debug2022;TargetFrameworkVersion=v4.8" />
-    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit_UI\SAM_Revit_UI.sln /t:Clean /p:Configuration=Debug2023;TargetFrameworkVersion=v4.8" />
-    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit_UI\SAM_Revit_UI.sln /t:Clean /p:Configuration=Debug2024;TargetFrameworkVersion=v4.8" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit_UI\SAM_Revit_UI.sln /t:Clean /p:Configuration=Debug2025" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit_UI\SAM_Revit_UI.sln /t:Clean /p:Configuration=Debug2026" />
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Multitasker\SAM_Multitasker.sln /t:Clean /p:Configuration=Debug" />
   </Target>
 
@@ -96,18 +84,12 @@
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Excel\SAM_Excel.sln /t:Rebuild /p:Configuration=Debug" />
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_SQLite\SAM_SQLite.sln /t:Rebuild /p:Configuration=Debug" />
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_OpenStudio\SAM_OpenStudio.sln /t:Rebuild /p:Configuration=Debug;Platform=x64" />
-    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit\SAM_Revit.sln /t:Rebuild /p:Configuration=Debug2020;TargetFrameworkVersion=v4.8" />
-    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit\SAM_Revit.sln /t:Rebuild /p:Configuration=Debug2021;TargetFrameworkVersion=v4.8" />
-    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit\SAM_Revit.sln /t:Rebuild /p:Configuration=Debug2022;TargetFrameworkVersion=v4.8" />
-    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit\SAM_Revit.sln /t:Rebuild /p:Configuration=Debug2023;TargetFrameworkVersion=v4.8" />
-    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit\SAM_Revit.sln /t:Rebuild /p:Configuration=Debug2024;TargetFrameworkVersion=v4.8" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit\SAM_Revit.sln /t:Rebuild /p:Configuration=Debug2025" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit\SAM_Revit.sln /t:Rebuild /p:Configuration=Debug2026" />
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_UI\SAM_UI.sln /t:Rebuild /p:Configuration=Debug" />
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Rhino_UI\SAM_Rhino_UI.sln /t:Rebuild /p:Configuration=Debug" />
-    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit_UI\SAM_Revit_UI.sln /t:Rebuild /p:Configuration=Debug2020;TargetFrameworkVersion=v4.8" />
-    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit_UI\SAM_Revit_UI.sln /t:Rebuild /p:Configuration=Debug2021;TargetFrameworkVersion=v4.8" />
-    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit_UI\SAM_Revit_UI.sln /t:Rebuild /p:Configuration=Debug2022;TargetFrameworkVersion=v4.8" />
-    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit_UI\SAM_Revit_UI.sln /t:Rebuild /p:Configuration=Debug2023;TargetFrameworkVersion=v4.8" />
-    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit_UI\SAM_Revit_UI.sln /t:Rebuild /p:Configuration=Debug2024;TargetFrameworkVersion=v4.8" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit_UI\SAM_Revit_UI.sln /t:Rebuild /p:Configuration=Debug2025" />
+    <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Revit_UI\SAM_Revit_UI.sln /t:Rebuild /p:Configuration=Debug2026" />
     <Exec Command="&quot;$(MSBuildExePath)&quot; SAM_Multitasker\SAM_Multitasker.sln /t:Rebuild /p:Configuration=Debug" />
   </Target>
 
