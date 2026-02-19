@@ -15,6 +15,7 @@ jobs:
   displayName: Agent job 1
   pool:
     name: Azure Pipelines
+    vmImage: windows-latest
   steps:
   - checkout: self
     clean: true
