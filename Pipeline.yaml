@@ -55,44 +55,6 @@ jobs:
       TargetFolder: $(APPDATA)\SAM
       OverWrite: true
       flattenFolders: true
-  - task: DownloadPackage@1
-    displayName: Download Package Revit 2025
-    inputs:
-      feed: /b1e4e38b-27ed-4813-9fa3-a6e9e1ab2d56
-      definition: YOUR_2025_DEFINITION_ID
-      version: 2025.1.1
-      downloadPath: $(build.sourcesdirectory)\SAM_Revit\references\Revit 2025
-  - task: CopyFiles@2
-    displayName: flatten lib folder 2025
-    inputs:
-      SourceFolder: $(build.sourcesdirectory)\SAM_Revit\references\Revit 2025\lib
-      TargetFolder: $(build.sourcesdirectory)\SAM_Revit\references\Revit 2025
-      OverWrite: true
-  - task: CopyFiles@2
-    displayName: flatten lib folder 2025 UI
-    inputs:
-      SourceFolder: $(build.sourcesdirectory)\SAM_Revit\references\Revit 2025\lib
-      TargetFolder: $(build.sourcesdirectory)\SAM_Revit_UI\references\Revit 2025
-      OverWrite: true
-  - task: DownloadPackage@1
-    displayName: Download Package Revit 2026
-    inputs:
-      feed: /b1e4e38b-27ed-4813-9fa3-a6e9e1ab2d56
-      definition: YOUR_2026_DEFINITION_ID
-      version: 2026.1.1
-      downloadPath: $(build.sourcesdirectory)\SAM_Revit\references\Revit 2026
-  - task: CopyFiles@2
-    displayName: flatten lib folder 2026
-    inputs:
-      SourceFolder: $(build.sourcesdirectory)\SAM_Revit\references\Revit 2026\lib
-      TargetFolder: $(build.sourcesdirectory)\SAM_Revit\references\Revit 2026
-      OverWrite: true
-  - task: CopyFiles@2
-    displayName: flatten lib folder 2026 UI
-    inputs:
-      SourceFolder: $(build.sourcesdirectory)\SAM_Revit\references\Revit 2026\lib
-      TargetFolder: $(build.sourcesdirectory)\SAM_Revit_UI\references\Revit 2026
-      OverWrite: true
   - task: PowerShell@2
     displayName: Fixup nuget cache
     inputs:
