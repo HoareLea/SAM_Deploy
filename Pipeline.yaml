@@ -1,0 +1,146 @@
+# Variable 'WILLHLPAT' was defined in the Variables tab
+# Agent Queue 'Azure Pipelines' was used with unrecognized Agent Specification, vmImage property must be specified to determine image - https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops&tabs=yaml#software
+trigger:
+  branches:
+    include:
+    - master
+    - 2025plus-build
+  batch: True
+name: $(date:yyyyMMdd)$(rev:.r)
+pool:
+  name: Azure Pipelines
+  vmImage: windows-latest
+jobs:
+- job: Job_1
+  displayName: Agent job 1
+  pool:
+    name: Azure Pipelines
+    vmImage: windows-latest
+  steps:
+  - checkout: self
+    clean: true
+    submodules: recursive
+    lfs: true
+    fetchTags: true
+  - task: CmdLine@2
+    displayName: Clean SAM Build dir
+    inputs:
+      script: if exist "%APPDATA%\SAM\" rmdir "%APPDATA%\SAM\" /Q /S
+  - task: CmdLine@2
+    displayName: Create Grasshopper lib folder
+    inputs:
+      script: mkdir "$(APPDATA)\Grasshopper\Libraries\"
+  - task: CmdLine@2
+    displayName: Create SAM Staging DIR
+    inputs:
+      script: mkdir "$(build.artifactstagingdirectory)\SAM"
+  - task: CopyFiles@2
+    displayName: Copy Rhino.Inside
+    inputs:
+      SourceFolder: $(build.sourcesdirectory)\SAM_Revit\references
+      Contents: '**/*'
+      TargetFolder: $(build.artifactstagingdirectory)\Rhino.Inside
+      OverWrite: true
+  - task: CopyFiles@2
+    displayName: Copy install
+    inputs:
+      SourceFolder: $(build.sourcesdirectory)\Install
+      TargetFolder: $(build.artifactstagingdirectory)
+      OverWrite: true
+  - task: CopyFiles@2
+    displayName: Copy References to app data
+    inputs:
+      SourceFolder: $(build.sourcesdirectory)
+      Contents: '**/references/**/*'
+      TargetFolder: $(APPDATA)\SAM
+      OverWrite: true
+      flattenFolders: true
+  - task: PowerShell@2
+    displayName: Fixup nuget cache
+    inputs:
+      targetType: inline
+      script: dotnet nuget locals all --clear
+  - task: MSBuild@1
+    displayName: Build solution BuildAll_Release.csproj
+    enabled: False
+    inputs:
+      solution: BuildAll_Release.csproj
+      msbuildArchitecture: x64
+      msbuildArguments: -t:Restore;Rebuild
+  - task: VSBuild@1
+    displayName: BuildAll_Release.csproj
+    inputs:
+      solution: BuildAll_Release.csproj
+      vsVersion: 17.0
+      msbuildArgs: /property:langversion=latest /t:RestoreCleanRebuild
+      platform: $(BuildPlatform)
+      configuration: $(BuildConfiguration)
+  - task: CopyFiles@2
+    displayName: Copy GH user objects
+    inputs:
+      SourceFolder: $(APPDATA)\Grasshopper\UserObjects\SAM
+      Contents: '**/*'
+      TargetFolder: $(build.artifactstagingdirectory)\SAMdependencies\GHUserObjects\SAM
+      OverWrite: true
+  - task: CopyFiles@2
+    displayName: Copy SAMComponents
+    inputs:
+      SourceFolder: $(APPDATA)\SAM
+      Contents: '**/*'
+      TargetFolder: $(build.artifactstagingdirectory)\SAM
+      OverWrite: true
+  - task: CopyFiles@2
+    displayName: Copy User files
+    inputs:
+      SourceFolder: $(USERPROFILE)\Documents\SAM\
+      Contents: '**/*'
+      TargetFolder: $(build.artifactstagingdirectory)\user\Documents\SAM\
+      OverWrite: true
+  - task: CopyFiles@2
+    displayName: Copy Revit Addin manifest
+    inputs:
+      SourceFolder: $(build.sourcesdirectory)\SAM_Revit_UI\files\Addin
+      Contents: '**/*'
+      TargetFolder: $(build.artifactstagingdirectory)\SAM\
+      OverWrite: true
+  - task: CopyFiles@2
+    displayName: Copy SAM_Rhino_UI files
+    inputs:
+      SourceFolder: $(APPDATA)\McNeel\Rhinoceros\packages\7.0\SAM\1.0.0\
+      Contents: '**/*'
+      TargetFolder: $(build.artifactstagingdirectory)\SAM_Rhino_UI\v$(Build.BuildNumber)\
+      OverWrite: true
+  - task: CmdLine@2
+    displayName: Create SAM_Rhino manifest
+    inputs:
+      script: echo %SAMVERSION% > manifest.txt
+      workingDirectory: $(build.artifactstagingdirectory)\SAM_Rhino_UI
+  - task: DeleteFiles@1
+    displayName: Delete files from $(build.artifactstagingdirectory)\SAM
+    inputs:
+      SourceFolder: $(build.artifactstagingdirectory)\SAM
+      Contents: >-
+        **/Eto.dll
+
+        **/GH_IO.dll
+
+        **/Grasshopper.dll
+
+        **/RevitAPIIFC.dll
+
+        **/Rhino.UI.dll
+
+        **/RhinoCommon.dll
+
+        **/RevitNodes.dll
+
+        **/RevitServices.dll
+
+        **/RhinoInside.Revit.dll
+
+        **/RhinoInside.Revit.GH.dll
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish Artifact: SAM_AIO'
+    inputs:
+      ArtifactName: SAM_AIO
+...
