@@ -1,42 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0"
+         DefaultTargets="RestoreCleanRebuild"
+         xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
   <ItemGroup>
-     <Solution Include="SAM_Revit/SAM_Revit.sln">
-      <Properties>Configuration=Release2025; Platform=Any CPU;TargetFramework=net8.0-windows</Properties>
-    </Solution>
-    <Solution Include="SAM_Revit_UI/SAM_Revit_UI.sln">
-      <Properties>Configuration=Release2025;Platform=Any CPU;TargetFramework=net8.0-windows</Properties>
-    </Solution>
-     <Solution Include="SAM_Revit/SAM_Revit.sln">
-      <Properties>Configuration=Release2026; Platform=Any CPU;TargetFramework=net8.0-windows</Properties>
-    </Solution>
-    <Solution Include="SAM_Revit_UI/SAM_Revit_UI.sln">
-      <Properties>Configuration=Release2026;Platform=Any CPU;TargetFramework=net8.0-windows</Properties>
-    </Solution>
- <!--  <Solution Include="SAM_UI/Framework/SAM_UI.sln">
+    <!-- Core solutions -->
+    <Solution Include="SAM\SAM.sln">
       <Properties>Configuration=Release;Platform=Any CPU</Properties>
-    </Solution>-->
-<!--    <Solution Include="SAM_Rhino_UI/SAM_Rhino_UI.sln">
+    </Solution>
+    <!-- OCCT engine: managed assemblies + Grasshopper components. References SAM\build\*.dll
+         so it must build after SAM. The native SAM.Occt.Native.dll + OpenCASCADE runtime are
+         produced separately (see installer.yml "OCCT native" steps), not by this .sln.
+         SAM_OCCT_SKIP_NATIVE_BUILD=true is set on this entry so EVERY caller of this project
+         (installer.yml, BuildAll_release.bat, local dev) skips the OCCT Grasshopper project's
+         pre-build native step, which needs the OCCT SDK/vcpkg and otherwise fails. -->
+    <Solution Include="SAM_OCCT\SAM_OCCT.sln" Condition="Exists('SAM_OCCT\SAM_OCCT.sln')">
+      <Properties>Configuration=Release;Platform=Any CPU;SAM_OCCT_SKIP_NATIVE_BUILD=true</Properties>
+    </Solution>
+    <Solution Include="SAM_Psychrometrics\SAM_Psychrometrics.sln">
       <Properties>Configuration=Release;Platform=Any CPU</Properties>
-    </Solution> test
- 	<Solution Include="SAM_Multitasker/SAM_Multitasker.sln">
+    </Solution>
+    <Solution Include="SAM_Mollier\SAM_Mollier.sln">
       <Properties>Configuration=Release;Platform=Any CPU</Properties>
-    </Solution>-->
+    </Solution>
+    <Solution Include="SAM_Systems\SAM_Systems.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
+    <Solution Include="SAM_Windows\SAM_Windows.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
+    <Solution Include="SAM_IFC\SAM_IFC.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
+    <Solution Include="SAM_Topologic\SAM_Topologic.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
+
+    <!-- Optional modules (skip if submodule not present) -->
+    <Solution Include="SAM_Acoustic\SAM_Acoustic.sln" Condition="Exists('SAM_Acoustic\SAM_Acoustic.sln')">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
+
+    <Solution Include="SAM_BHom\SAM_BHom.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
+    <Solution Include="SAM_gbXML\SAM_gbXML.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
+    <Solution Include="SAM_GEM\SAM_GEM.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
+    <Solution Include="SAM_LadybugTools\SAM_LadybugTools.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
+    <Solution Include="SAM_Solver\SAM_Solver.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
+    <Solution Include="SAM_SolarCalculator\SAM_SolarCalculator.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
+    <Solution Include="SAM_Tas\SAM_Tas.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
+    <Solution Include="SAM_Excel\SAM_Excel.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
+    <Solution Include="SAM_SQLite\SAM_SQLite.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
+    <Solution Include="SAM_OpenStudio\SAM_OpenStudio.sln">
+      <Properties>Configuration=Release;Platform=x64</Properties>
+    </Solution>
+    <Solution Include="SAM_Origin\SAM_Origin.sln" Condition="Exists('SAM_Origin\SAM_Origin.sln')">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
+    <Solution Include="SAM_Multitasker\SAM_Multitasker.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
+
+    <!-- Revit core only. Host entry UI repos are rebuilt explicitly in installer.yml -->
+    <Solution Include="SAM_Revit\SAM_Revit.sln">
+      <Properties>Configuration=Release2025;Platform=Any CPU</Properties>
+    </Solution>
+    <Solution Include="SAM_Revit\SAM_Revit.sln">
+      <Properties>Configuration=Release2026;Platform=Any CPU</Properties>
+    </Solution>
+
+    <!-- Desktop UI only. SAM_Rhino_UI and SAM_Revit_UI are rebuilt explicitly in installer.yml -->
+    <Solution Include="SAM_UI\SAM_UI.sln">
+      <Properties>Configuration=Release;Platform=Any CPU</Properties>
+    </Solution>
   </ItemGroup>
+
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Platform      Condition=" '$(Platform)' == '' ">Any CPU</Platform>
+
+    <!-- Make CI strict, but allow known package-compat warnings -->
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsNotAsErrors>$(WarningsNotAsErrors);NU1701</WarningsNotAsErrors>
+
+    <WindowsRefPath>$(MSBuildThisFileDirectory)SAM_Windows\build</WindowsRefPath>
+
+    <CommonCIProps>
+      UseSharedCompilation=false;
+      RunPostBuildEvent=OnOutputUpdated;
+      ReferencePath=$(WindowsRefPath);
+      TreatWarningsAsErrors=true;
+      WarningsNotAsErrors=NU1701;
+      SAMVersion=$(SAMVersion);
+      InformationalVersion=$(InformationalVersion);
+      SAMSourceRevision=$(SAMSourceRevision)
+    </CommonCIProps>
   </PropertyGroup>
-  <Target Name="Build">
-    <MSBuild Projects="@(Solution)" BuildInParallel="false" Targets="Build" Properties="Configuration=$(Configuration);OutputPath=%(Projects.BuildOutputPath)"  />
-  </Target>
+
   <Target Name="Clean">
-    <MSBuild Projects="@(Solution)" BuildInParallel="false" Targets="Clean" />
+    <MSBuild Projects="@(Solution)"
+             BuildInParallel="false"
+             Targets="Clean"
+             Properties="%(Solution.Properties);$(CommonCIProps)" />
   </Target>
+
+  <Target Name="Build">
+    <MSBuild Projects="@(Solution)"
+             BuildInParallel="false"
+             Targets="Build"
+             Properties="%(Solution.Properties);$(CommonCIProps)" />
+  </Target>
+
   <Target Name="Rebuild">
-    <MSBuild Projects="@(Solution)" BuildInParallel="false" Targets="Rebuild" />
+    <MSBuild Projects="@(Solution)"
+             BuildInParallel="false"
+             Targets="Rebuild"
+             Properties="%(Solution.Properties);$(CommonCIProps)" />
   </Target>
+
   <Target Name="Restore">
-    <MSBuild Projects="@(Solution)" BuildInParallel="false" Targets="Restore" Properties="Configuration=$(Configuration);OutputPath=%(Projects.BuildOutputPath)" />
+    <MSBuild Projects="@(Solution)"
+             BuildInParallel="false"
+             Targets="Restore"
+             Properties="%(Solution.Properties);$(CommonCIProps)" />
   </Target>
+
+  <Target Name="RestoreCleanRebuild"
+          DependsOnTargets="Restore;Clean;Rebuild" />
 </Project>
